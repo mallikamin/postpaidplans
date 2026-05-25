@@ -201,12 +201,12 @@
 
     /* Header */
     header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;height:70px}
     .brand{display:flex;align-items:center;gap:.6rem;font-family:'Playfair Display',serif;font-weight:800;font-size:1.32rem;color:var(--ink)}
     .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(227,6,19,.15)}
     .brand b{color:var(--red)}
-    .nav-links{display:flex;align-items:center;gap:1.7rem}
-    .nav-links a{font-weight:500;font-size:.96rem;color:var(--body)}
+    .nav-links{display:flex;align-items:center;gap:1.4rem}
+    .nav-links a{font-weight:500;font-size:.96rem;color:var(--body);white-space:nowrap}
     .nav-links a:hover{color:var(--red)}
     .nav-cta{display:flex;align-items:center;gap:.6rem}
     .burger{display:none;background:none;border:none;cursor:pointer;font-size:1.6rem;color:var(--ink)}
@@ -322,13 +322,21 @@
     .wa-fab:hover{transform:scale(1.08)}
     .wa-fab svg{width:32px;height:32px;fill:#fff}
 
+    /* collapse nav to the burger before the inline links crowd (small laptops / tablet landscape) */
+    @media(max-width:1080px){
+      .nav-links{display:none}
+      .burger{display:block}
+      .nav-cta .btn-ghost{display:none}
+    }
     @media(max-width:880px){
       .hero-grid{grid-template-columns:1fr;gap:30px}
       .feat-grid{grid-template-columns:1fr}
       .num-cta{grid-template-columns:1fr;text-align:center}
-      .nav-links{display:none}
-      .burger{display:block}
-      .nav-cta .btn-ghost{display:none}
+    }
+    /* phones: drop the inline WhatsApp pill (kept in the menu + floating button) so the burger never gets pushed off-screen */
+    @media(max-width:560px){
+      .nav-cta{display:none}
+      .brand{font-size:1.12rem}
     }
   </style>
 </head>
@@ -339,7 +347,6 @@
     <div class="wrap nav">
       <a href="/" class="brand"><span class="dot"></span>Postpaid<b>Plans</b>&nbsp;UAE</a>
       <nav class="nav-links">
-        <a href="#finder">Plan Finder</a>
         <a href="#compare">Compare Plans</a>
         <a href="/premium-numbers-uae/">VIP Numbers</a>
         <a href="/blog/">Blog</a>
