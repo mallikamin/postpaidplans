@@ -1,0 +1,16 @@
+# --- file hygiene (never commit) ---
+_files/
+_archive/
+_context/CREDENTIALS.md
+*.env
+.env
+.env.*
+
+# --- build / tooling ---
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+node_modules/
+.wrangler/
+.dev.vars

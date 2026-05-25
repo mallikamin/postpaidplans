@@ -1,0 +1,35 @@
+# Claude — Project Instructions (postpaidplans)
+
+**Read `_context/INDEX.md` first.** It is the wikipedia of this project.
+
+## What this is
+
+`postpaidplans.com` — a **tool-led** Etisalat postpaid-plan site. The differentiator vs the sister sites is an **interactive Plan Finder** (recommends a plan from budget + need) plus a side-by-side comparison table. Positioned as an **Authorized Etisalat Dealer** (Etisalat-only — never write "Du" or Du hashtags here, same rule as goldennummbers).
+
+## Sister sites (coordinate, don't duplicate)
+- `goldennummbers.com` — numbers-led, Etisalat-positioned (`C:\Users\Malik\desktop\etisalat-shop`)
+- `uaepremiumnumbers.com` — plan-led catalog (`C:\ST\Sitara Infotech\uae-premium-numbers`)
+- `postpaidplans.com` (this) — **plan-FINDER / calculator angle.** Keep copy + titles distinct from uaepremiumnumbers to avoid duplicate-content cannibalization. Do NOT clone the per-number pages or location pages from the sisters.
+
+## Shared backend (reused, keep identical)
+- WhatsApp conversion number: **`971569028087`** (all WhatsApp links). `tel:` voice line in choose-number stays `+971566999377`.
+- `/choose-number/` — the number picker is reused verbatim from uaepremiumnumbers; same Google Sheets inventory + `PARTNER_API` Apps Script. Only domain/canonical/branding were swapped. **Stays functionally the same.**
+- Google Sheets inventory (SHEETS array in choose-number) is shared across all three sites.
+
+## Tracking
+- GA4 + Meta Pixel are **placeholders** (`__GA4_PLACEHOLDER__`, `__FB_PIXEL_PLACEHOLDER__`, `__GSC_PLACEHOLDER__`). Paste the postpaidplans.com property IDs before/after first deploy.
+
+## Deploy
+- Cloudflare "Workers with Static Assets" via `wrangler.toml` + `worker.js`, connected to GitHub repo `mallikamin/postpaidplans`. Domain DNS: GoDaddy → Cloudflare nameservers. `git push origin main` → auto-deploy.
+
+## File hygiene (mandatory)
+- Daily scratch / drafts / generated → `_files/YYYY-MM-DD/`, not project root.
+- Shared images/notes/refs → `_context/screenshots|notes|refs/`, logged in `_context/INDEX.md`.
+- Never commit `_context/CREDENTIALS.md`, `*.env`, `_files/`, `_archive/` (all gitignored). Check `git status` before `git add`.
+
+## Git
+- Identity: `Malik Amin <amin@sitaratech.info>` — no Co-Authored-By/Claude/Anthropic lines.
+- Stage specific paths, not `git add .`.
+
+## Rebrand rule (inherited)
+Any title/H1/schema must keep "Etisalat" prominent as a relationship descriptor (Authorized Dealer). H1 must repeat the primary noun from `<title>`.
