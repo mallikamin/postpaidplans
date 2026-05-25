@@ -35,7 +35,7 @@ Created 2026-05-25 as the third site in the family, deliberately **distinct in a
 ## Reference material
 | Date | File | Purpose |
 |------|------|---------|
-|      |      |         |
+| 2026-05-25 | `screenshots/2026-05-25_godaddy-cloudflare-nameservers.png` | GoDaddy confirming custom NS = daisy/vick.ns.cloudflare.com (Step 1 DNS cutover). Verified propagated at 1.1.1.1 + 8.8.8.8 same day. |
 
 ## Pending decisions / open questions
 - Phase 2: fresh plan-detail pages, blog, location pages (must be distinct copy, not cloned from sisters).
