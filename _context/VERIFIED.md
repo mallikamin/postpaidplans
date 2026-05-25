@@ -2,6 +2,15 @@
 
 Append-only log of what was verified, when, and how. Newest at top.
 
+## 2026-05-25 (eve) — Per-number SEO pages live (~3,322) + combined sitemap submitted
+
+- **Category**: code / SEO / infra
+- **What**: Owner-approved reversal of the "deferred" per-number-pages decision. Built `generate_number_pages.py` (postpaidplans) → one static page per Available number from the **shared Google Sheet** (same source as `/choose-number/`) at `/numbers/etisalat-<digits>/` + a `/numbers/` hub. Counts: **3,322 numbers (Silver 3128 / Gold 152 / Platinum 42)**.
+- **Distinctness (vs sister number pages that publish the same numbers)**: deliberate **plan-pairing angle** — each page is built around the Etisalat postpaid plan the number comes with (Silver→entry plans from AED 188, Gold→Gold Plan 500, Platinum→Platinum Plan), lists the matching plans, cross-links the Plan Finder, plan-led FAQ + copy, red/light theme via shared `/assets/site.css` + new `/assets/numbers.css`, self-canonical. Genuinely different from the number-led sister template (mitigates 3-way cannibalization that CLAUDE.md warned about).
+- **Sitemap**: `sitemap-numbers.xml` (3,323 URLs incl. hub) + `sitemap-index.xml` (points to sitemap.xml + sitemap-numbers.xml). robots.txt now advertises the index.
+- **How verified**: rendered Gold/Silver/Platinum + hub samples (desktop + true-mobile via Playwright) before the full run; committed (1657179) + pushed → Cloudflare auto-deploy. Live checks: `/numbers/etisalat-0501450770/`=200 (distinct plan copy present), `/numbers/`=200, `sitemap-index.xml`=200, `sitemap-numbers.xml`=200, `generate_number_pages.py`=**404** (`.assetsignore` `*.py` works). **IndexNow: all 3,323 URLs submitted, 4 batches all HTTP 200** (Bing/Yandex). Homepage footer links the hub.
+- **STILL TODO**: Google side — submit `https://postpaidplans.com/sitemap-index.xml` in **Google Search Console** (needs GSC set up first; still pending with GA4/Pixel placeholders). The deprecated Google sitemap-ping endpoint can't be used.
+
 ## 2026-05-25 (eve) — Header responsiveness fixed (desktop crowding + mobile + Arabic)
 
 - **Category**: code / UI

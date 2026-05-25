@@ -24,9 +24,11 @@ Created 2026-05-25 as the third site in the family, deliberately **distinct in a
 - `/choose-number/` reused verbatim from uaepremiumnumbers (same SHEETS inventory + PARTNER_API); only domain/branding swapped.
 - Tracking: GA4 + Meta Pixel + GSC are PLACEHOLDERS pending real IDs.
 
-## Current status
-- v1 built locally 2026-05-25: homepage (finder + compare + FAQ), Arabic mirror, choose-number, legal pages, full SEO/AI-SEO/GEO infra.
-- PENDING (account-level, Malik): GoDaddy→Cloudflare DNS, Cloudflare Pages/Workers project + custom domain, paste real GA4/Pixel/GSC IDs, GSC + Bing verification, submit sitemap. See repo README / handoff.
+## Current status (2026-05-25 — LIVE)
+- ✅ **Site is LIVE** at https://postpaidplans.com (+ www), valid SSL, deployed via Cloudflare Worker connected to repo `mallikamin/postpaidplans` (push = auto-deploy).
+- ✅ Steps 1–3 done + verified: DNS cutover (GoDaddy→Cloudflare NS daisy/vick), Worker deploy, custom domains + SSL, `.assetsignore` security fix, AI-bot block + Cloudflare robots.txt injection both disabled.
+- ⏳ **ONLY Step 4 remains**: paste real GA4 (`__GA4_PLACEHOLDER__`) + Meta Pixel (`__FB_PIXEL_PLACEHOLDER__`) IDs into index.html/ar/choose-number → push; then GSC Domain-property (DNS TXT) + submit sitemap; Bing/IndexNow.
+- 📋 Full resume detail: `PAUSE_CHECKPOINT_2026-05-25.md` (project root). Known issues: `ERROR_LOG.md`.
 
 ## People involved
 - Malik Amin (owner)
@@ -39,5 +41,5 @@ Created 2026-05-25 as the third site in the family, deliberately **distinct in a
 
 ## Pending decisions / open questions
 - Phase 2: fresh plan-detail pages, blog, location pages (must be distinct copy, not cloned from sisters).
-- Decide whether to generate per-number SEO pages here (high duplicate-content risk — deferred).
+- ~~Decide whether to generate per-number SEO pages~~ → **DONE 2026-05-25** (owner-approved): built ~3,322 `/numbers/etisalat-<digits>/` pages via `generate_number_pages.py` with a **distinct plan-pairing angle** (not cloned) to manage duplicate-content risk. Hub `/numbers/`, `sitemap-numbers.xml` + `sitemap-index.xml`, IndexNow-submitted. **Remaining: submit `sitemap-index.xml` in Google Search Console once GSC is set up.**
 - New OG image with postpaidplans branding (currently reuses sister og-image.png).
