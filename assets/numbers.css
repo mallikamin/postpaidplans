@@ -1,0 +1,50 @@
+/* Per-number page components — postpaidplans.com (red / light theme).
+   Loaded AFTER site.css; reuses its :root vars, header, footer, .faq-item, .crumb.
+   Intentionally distinct from the sister sites' number pages (plan-pairing angle). */
+
+body{padding-bottom:74px} /* room for the sticky contact bar */
+
+.num-hero{text-align:center;padding:34px 0 6px}
+.tier-pill{display:inline-block;padding:.3rem .9rem;border-radius:999px;font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.7rem}
+.tier-pill.silver{background:#EEF1F4;color:#56606B}
+.tier-pill.gold{background:#F7EFD8;color:#9A7B2E}
+.tier-pill.platinum{background:#E7E4F2;color:#5B4B8A}
+.num-h1{font-size:clamp(1.4rem,2.8vw,1.9rem);margin-bottom:.1rem}
+.big-num{font-family:'DM Sans',sans-serif;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.06em;color:var(--red);font-size:clamp(2rem,6.4vw,3.1rem);line-height:1.1;margin:.25rem 0 .35rem}
+.num-sub{color:var(--muted);max-width:40rem;margin:.3rem auto .9rem;font-size:1.02rem}
+.num-price{font-size:1.02rem;color:var(--body);margin:.3rem 0 .9rem}
+.num-price b{color:var(--red);font-size:1.45rem;font-family:'DM Sans',sans-serif}
+.num-price small{color:var(--muted)}
+.cta-row{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin:1rem 0}
+
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:.7rem;margin:1.4rem 0}
+.fact{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1rem;text-align:center;box-shadow:var(--shadow)}
+.fact .k{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem}
+.fact .v{font-family:'Playfair Display',serif;font-size:1.32rem;color:var(--ink);font-weight:700}
+
+.pairing{background:#fff;border:1px solid var(--line);border-left:4px solid var(--red);border-radius:14px;padding:1.3rem 1.4rem;box-shadow:var(--shadow);margin:1.2rem 0}
+.pairing h2{font-size:1.3rem;margin-bottom:.5rem}
+.pairing p{color:var(--body);margin-bottom:.6rem}
+.plan-list{display:grid;gap:.55rem;margin:.9rem 0 .3rem}
+.plan-row{display:flex;justify-content:space-between;gap:1rem;align-items:center;border:1px solid var(--line);border-radius:12px;padding:.7rem .9rem;background:var(--bg-soft)}
+.plan-row .pn{font-weight:700;color:var(--ink);font-size:.95rem}
+.plan-row .pmeta{font-size:.8rem;color:var(--muted)}
+.plan-row .pp{font-weight:700;color:var(--red);white-space:nowrap}
+.plan-row .pp small{display:block;font-weight:400;font-size:.7rem;color:var(--muted);text-align:right}
+
+.related{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:.7rem;margin-top:.8rem}
+.rcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.9rem;display:flex;flex-direction:column;gap:.3rem;box-shadow:var(--shadow);transition:border-color .14s,transform .14s}
+.rcard:hover{border-color:var(--red);transform:translateY(-2px)}
+.rcard .rnum{font-family:'DM Sans',sans-serif;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.04em;color:var(--red);font-size:1.05rem}
+.rcard .rmeta{font-size:.8rem;color:var(--muted)}
+
+.steps{counter-reset:s;list-style:none;margin:1rem 0}
+.steps li{counter-increment:s;padding:.8rem 0 .8rem 2.6rem;position:relative;border-bottom:1px solid var(--line)}
+.steps li:last-child{border-bottom:none}
+.steps li::before{content:counter(s);position:absolute;left:0;top:.7rem;width:1.8rem;height:1.8rem;background:var(--red);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'DM Sans',sans-serif;font-size:.9rem}
+
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 20px rgba(21,23,28,.08);padding:.6rem 1rem;display:flex;gap:.7rem;align-items:center;justify-content:space-between;z-index:70}
+.sticky-cta .meta{font-size:.82rem;color:var(--muted)}
+.sticky-cta .meta b{display:block;color:var(--red);font-weight:700;font-variant-numeric:tabular-nums;font-size:1.05rem;letter-spacing:.03em}
+.sticky-cta .btn{padding:.62rem 1.1rem}
+@media(max-width:560px){.sticky-cta .meta{display:none}.sticky-cta{justify-content:center}}

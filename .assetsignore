@@ -18,6 +18,9 @@ _archive
 wrangler.toml
 worker.js
 
+# build tooling (the per-number page generator) — never served
+*.py
+
 # internal reference copy of the IndexNow key
 # (the real verification file 7ca1a2e6...txt IS served, on purpose)
 indexnow-key.txt

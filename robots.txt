@@ -4,8 +4,10 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
+# Sitemaps (index covers the main sitemap + the per-number sitemap)
+Sitemap: https://postpaidplans.com/sitemap-index.xml
 Sitemap: https://postpaidplans.com/sitemap.xml
+Sitemap: https://postpaidplans.com/sitemap-numbers.xml
 
 # AI Crawlers — welcome (GEO / AI search optimization)
 User-agent: GPTBot
