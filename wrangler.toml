@@ -8,6 +8,11 @@ compatibility_date = "2024-12-18"
 directory = "./"
 binding = "ASSETS"
 not_found_handling = "404-page"
+# Run worker.js before serving static assets so canonicalRedirect() (http/www
+# -> https apex 301) fires on real pages. Without this, Cloudflare serves the
+# matching static asset directly and the worker never runs for "/" etc.
+# The worker falls through to env.ASSETS.fetch() for all non-redirected requests.
+run_worker_first = true
 
 # Optional secrets/vars are set in the Cloudflare dashboard
 # (Settings -> Variables and Secrets), never committed here.
