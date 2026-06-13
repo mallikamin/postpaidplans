@@ -4,7 +4,9 @@
 
 ## What this is
 
-`postpaidplans.com` — a **tool-led** Etisalat postpaid-plan site. The differentiator vs the sister sites is an **interactive Plan Finder** (recommends a plan from budget + need) plus a side-by-side comparison table. Positioned as an **Authorized Etisalat Dealer** (Etisalat-only — never write "Du" or Du hashtags here, same rule as goldennummbers).
+`postpaidplans.com` — a **tool-led** Etisalat postpaid-plan site. The differentiator vs the sister sites is an **interactive Plan Finder** (recommends a plan from budget + need) plus a side-by-side comparison table. Positioned as an **Authorized Etisalat Dealer**.
+
+**Du-rule — UPDATED 2026-06-14 (owner decision, supersedes the old "never write Du" rule):** PPP MAY now publish honest **du-vs-e& comparison** content — this is goldennummbers' single biggest traffic engine (5,800+ impr EN+AR) and the GSC benchmark proved the demand. Du may be named **as a competitor, for comparison purposes only**, with every comparison concluding from the Authorized Etisalat Dealer point of view (Etisalat as the recommended choice). Outside comparison content, stay Etisalat-first: do not promote Du, sell Du products, or use Du hashtags. The exact-match domain advantage is on "postpaid plans" — comparison content is additive, not a pivot away from the plan-finder angle.
 
 ## Sister sites (coordinate, don't duplicate)
 - `goldennummbers.com` — numbers-led, Etisalat-positioned (`C:\Users\Malik\desktop\etisalat-shop`)
