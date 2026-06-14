@@ -48,6 +48,23 @@ reps = [
 for a, b in reps:
     t = t.replace(a, b)
 
+# 3) Turnstile resilience — a Turnstile failure (domain not whitelisted on the sitekey,
+#    ad-blocker, or network) must NEVER hard-block a real customer. Re-applied on every
+#    sync so re-pulls keep the fix. (The bilal-sales worker still applies its own checks.)
+ts_patches = [
+    ("var _tsWidgetId = null;\nvar _tsLoading = false;",
+     "var _tsWidgetId = null;\nvar _tsLoading = false;\nvar _tsFailed = false; // Turnstile failed (wrong domain/ad-blocker/network) — must not block checkout"),
+    ("      _tsWidgetId = window.turnstile.render('#coTurnstile', { sitekey: TURNSTILE_SITE_KEY, theme: 'dark' });\n    } catch (e) {}",
+     "      _tsWidgetId = window.turnstile.render('#coTurnstile', {\n        sitekey: TURNSTILE_SITE_KEY, theme: 'dark',\n        'error-callback': function() { _tsFailed = true; }\n      });\n    } catch (e) { _tsFailed = true; }"),
+    ("  s.async = true;\n  document.head.appendChild(s);\n}",
+     "  s.async = true;\n  s.onerror = function() { _tsFailed = true; };\n  document.head.appendChild(s);\n  setTimeout(function() {\n    try { if (!(window.turnstile && _tsWidgetId !== null && window.turnstile.getResponse(_tsWidgetId))) _tsFailed = true; }\n    catch (e) { _tsFailed = true; }\n  }, 10000);\n}"),
+    ("if (!tsToken) return checkoutShowError('Please complete the verification box above.');",
+     "if (!tsToken && !_tsFailed && _tsWidgetId !== null) return checkoutShowError('Please complete the verification box above.');"),
+]
+for a, b in ts_patches:
+    assert a in t, "ts patch anchor missing: " + repr(a[:45])
+    t = t.replace(a, b)
+
 open(DST, "w", encoding="utf-8", newline="\n").write(t)
 
 # --- verify ---

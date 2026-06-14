@@ -2717,6 +2717,7 @@ var TURNSTILE_SITE_KEY = '0x4AAAAAADewk9z6EICt6736'; // postpaidplans-checkout w
 var _checkout = null;        // { num, msisdn, cat, token }
 var _tsWidgetId = null;
 var _tsLoading = false;
+var _tsFailed = false; // Turnstile failed (wrong domain/ad-blocker/network) — must not block checkout
 
 var checkoutOverlay = document.getElementById('checkoutOverlay');
 var checkoutFormWrap = document.getElementById('checkoutFormWrap');
@@ -2730,13 +2731,21 @@ function loadTurnstileWidget() {
   _tsLoading = true;
   window.__ctTsReady = function() {
     try {
-      _tsWidgetId = window.turnstile.render('#coTurnstile', { sitekey: TURNSTILE_SITE_KEY, theme: 'dark' });
-    } catch (e) {}
+      _tsWidgetId = window.turnstile.render('#coTurnstile', {
+        sitekey: TURNSTILE_SITE_KEY, theme: 'dark',
+        'error-callback': function() { _tsFailed = true; }
+      });
+    } catch (e) { _tsFailed = true; }
   };
   var s = document.createElement('script');
   s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=__ctTsReady';
   s.async = true;
+  s.onerror = function() { _tsFailed = true; };
   document.head.appendChild(s);
+  setTimeout(function() {
+    try { if (!(window.turnstile && _tsWidgetId !== null && window.turnstile.getResponse(_tsWidgetId))) _tsFailed = true; }
+    catch (e) { _tsFailed = true; }
+  }, 10000);
 }
 
 function checkoutPlanValue(cat) { return tierInfo(cat).value; }
@@ -2885,7 +2894,7 @@ checkoutForm.addEventListener('submit', function(e) {
   var tsToken = '';
   if (TURNSTILE_SITE_KEY) {
     try { tsToken = window.turnstile && _tsWidgetId !== null ? window.turnstile.getResponse(_tsWidgetId) : ''; } catch (err) {}
-    if (!tsToken) return checkoutShowError('Please complete the verification box above.');
+    if (!tsToken && !_tsFailed && _tsWidgetId !== null) return checkoutShowError('Please complete the verification box above.');
   }
 
   coSubmit.disabled = true;
