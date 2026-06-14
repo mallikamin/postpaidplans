@@ -23,6 +23,7 @@ import html
 import io
 import json
 import os
+import shutil
 import sys
 import urllib.parse
 import urllib.request
@@ -42,7 +43,14 @@ BRAND = "PostpaidPlans UAE"
 DOMAIN = "postpaidplans.com"
 WA_NUMBER = "971569028087"
 PHONE_DISPLAY = "+971 56 902 8087"
-GA4 = "__GA4_PLACEHOLDER__"  # swept site-wide when the real ID is pasted
+GA4 = "G-B4813N8J6J"  # real PPP GA4 (hardcoded so regen keeps tracking; no post-sweep needed)
+
+# How many of the strongest numbers stay indexable (index,follow + in sitemap).
+# The rest are noindex,follow — crawlable as an internal-link layer to the money
+# pages, but kept out of the index (thin, near-duplicate, cross-domain dupes with
+# the sisters → they earned 0 clicks in GSC and only wasted crawl budget).
+INDEXABLE_LIMIT = 100
+HUB_PER_TIER = 48  # cap per-tier cards on /numbers/ hub (was: all 3,322 → 505 KB sink)
 
 # Same two sheets the /choose-number/ page consumes.
 SHEETS = [
@@ -333,6 +341,40 @@ def find_related(num, all_numbers):
     return rotate(same_tier, seed, 6), rotate(same_prefix, seed + 7, 6)
 
 
+# Tier-aware contextual links from each number page into the matching money page
+# (keyword-anchored, pointing at the real landing pages — not /#finder).
+MONEY_LINKS = {
+    "Silver": [("/cheapest-etisalat-postpaid-plan/", "Cheapest Etisalat plan →"),
+               ("/etisalat-plans-under-200-aed/", "Plans under AED 200")],
+    "Gold": [("/best-etisalat-plan-for-family/", "Best family plan →"),
+             ("/best-etisalat-unlimited-data-plan/", "Best unlimited data plan")],
+    "Platinum": [("/best-etisalat-plan-for-family/", "Best family plan →"),
+                 ("/etisalat-business-postpaid-plans/", "Business plans")],
+}
+
+
+def number_score(num):
+    """Strength score — patterns + repeated-tail + premium tier. Drives which
+    numbers stay indexable and which lead the hub. Plain numbers score 0."""
+    info = analyze(num["digits"])
+    d = num["digits"]
+    score = len(info["patterns"]) * 10
+    if len(d) == 10:
+        for k in (6, 5, 4, 3):
+            if len(set(d[-k:])) == 1:
+                score += k * 6
+                break
+    score += {"Platinum": 18, "Gold": 9, "Silver": 0}.get(num["category"], 0)
+    return score
+
+
+def pick_indexable(numbers, limit=INDEXABLE_LIMIT):
+    """Return the set of digit-strings for the top-`limit` strongest numbers
+    (score > 0). Everything else is noindex,follow + excluded from the sitemap."""
+    ranked = sorted(numbers, key=lambda n: (number_score(n), n["digits"]), reverse=True)
+    return {n["digits"] for n in ranked[:limit] if number_score(n) > 0}
+
+
 # ===========================================================================
 # SHARED CHROME (header / footer / scripts) — matches the live sub-pages
 # ===========================================================================
@@ -361,11 +403,15 @@ FOOTER = (
     'Etisalat postpaid plan and a premium VIP number — fast. Same-day SIM delivery in Dubai, Abu Dhabi &amp; Sharjah.</p>'
     '<a href="https://wa.me/' + WA_NUMBER + '" target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="margin-top:1rem">WhatsApp ' + PHONE_DISPLAY + '</a>'
     '<div style="font-size:.82rem;color:rgba(255,255,255,.62);margin-top:.85rem;line-height:1.55">&#128205; Al Zarooni Building, Office 1904, Ayal Nasir, Deira, Dubai, UAE</div></div>'
+    '<div><h4>Etisalat Plan Guides</h4>'
+    '<a href="/best-etisalat-unlimited-data-plan/">Best Unlimited Data Plan</a>'
+    '<a href="/best-etisalat-plan-for-family/">Best Family Plan</a>'
+    '<a href="/etisalat-plans-under-200-aed/">Plans Under AED 200</a>'
+    '<a href="/cheapest-etisalat-postpaid-plan/">Cheapest Postpaid Plan</a>'
+    '<a href="/etisalat-business-postpaid-plans/">Business Plans</a></div>'
     '<div><h4>Explore</h4><a href="/#finder">Plan Finder</a><a href="/#compare">Compare Plans</a>'
-    '<a href="/numbers/">All VIP Numbers</a><a href="/choose-number/">Choose Your Number</a><a href="/blog/">Blog</a></div>'
-    '<div><h4>VIP Numbers</h4><a href="/numbers/">Browse all numbers</a><a href="/premium-numbers-uae/">Premium Numbers UAE</a>'
-    '<a href="/vip-numbers-dubai/">VIP Numbers Dubai</a><a href="/vip-numbers-abu-dhabi/">VIP Numbers Abu Dhabi</a>'
-    '<a href="/golden-numbers-sharjah/">Golden Numbers Sharjah</a></div>'
+    '<a href="/choose-number/">Choose Your Number</a><a href="/numbers/">All VIP Numbers</a>'
+    '<a href="/reviews/">Reviews</a><a href="/blog/">Blog</a></div>'
     '<div><h4>Legal</h4><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Service</a>'
     '<a href="/refund-policy/">Refund &amp; Contact</a><a href="/ar/">العربية</a></div></div>'
     '<p class="disclaimer">© 2026 postpaidplans.com. Postpaid Plans UAE is an Official e&amp; Partner and Authorized '
@@ -394,7 +440,7 @@ FONTS = (
 # ===========================================================================
 # PAGE TEMPLATE
 # ===========================================================================
-def page_html(num, all_numbers):
+def page_html(num, all_numbers, indexable):
     info = analyze(num["digits"])
     cat = num["category"]
     pair = PAIRING[cat]
@@ -403,6 +449,11 @@ def page_html(num, all_numbers):
     f = html.escape(num["formatted"])
     faqs = faqs_for(num, info)
     rel_tier, rel_prefix = find_related(num, all_numbers)
+    robots_val = ("index, follow, max-image-preview:large, max-snippet:-1"
+                  if num["digits"] in indexable else "noindex, follow")
+    money = MONEY_LINKS[cat]
+    money_cta = (f'<a class="btn btn-red" href="{money[0][0]}">{money[0][1]}</a>'
+                 f'<a class="btn btn-ghost" href="{money[1][0]}">{money[1][1]}</a>')
 
     # ---- meta ----
     title = f"Etisalat {num['formatted']} — {cat} VIP Number + Plan | {BRAND}"
@@ -481,7 +532,7 @@ def page_html(num, all_numbers):
 <meta name="description" content="{html.escape(description)}">
 <meta name="keywords" content="{html.escape(keywords)}">
 <meta name="theme-color" content="#E30613">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="robots" content="{robots_val}">
 <meta name="author" content="{DOMAIN}">
 <link rel="canonical" href="{page_url}">
 <meta property="og:type" content="product">
@@ -536,8 +587,7 @@ def page_html(num, all_numbers):
     <p>{pair['intro']}</p>
     {plan_rows_html(pair['tier_key'])}
     <div class="cta-row" style="justify-content:flex-start">
-      <a class="btn btn-red" href="/#finder">Match it to my usage →</a>
-      <a class="btn btn-ghost" href="/#compare">Compare all plans</a>
+      {money_cta}
     </div>
   </div>
 </div>
@@ -593,13 +643,21 @@ def hub_html(numbers):
         nums = by_tier.get(tier, [])
         if not nums:
             return ""
+        total = len(nums)
+        shown = sorted(nums, key=number_score, reverse=True)[:HUB_PER_TIER]
         cards = "".join(
             f'<a class="rcard" href="/numbers/{slug_for(n)}/"><span class="rnum">{html.escape(n["formatted"])}</span>'
-            f'<span class="rmeta">{tier} · plan from AED {PAIRING[tier]["offer_price"]}</span></a>' for n in nums)
+            f'<span class="rmeta">{tier} · plan from AED {PAIRING[tier]["offer_price"]}</span></a>' for n in shown)
+        sub = f'Plan from AED {PAIRING[tier]["offer_price"]}/mo.'
+        more = ""
+        if total > len(shown):
+            sub = f'Plan from AED {PAIRING[tier]["offer_price"]}/mo — showing the top {len(shown)} of {total}.'
+            more = (f'<p style="margin-top:.8rem"><a href="/choose-number/" class="btn btn-ghost">'
+                    f'Search all {total} live {tier} numbers →</a></p>')
         return (f'<section class="block"><div class="wrap"><h2 style="font-size:1.5rem;margin-bottom:.2rem">{tier} VIP Numbers '
-                f'<small style="font-weight:400;color:var(--muted);font-size:.95rem">({len(nums)} available)</small></h2>'
-                f'<p style="color:var(--muted);margin-bottom:.7rem">Plan from AED {PAIRING[tier]["offer_price"]}/mo.</p>'
-                f'<div class="related">{cards}</div></div></section>')
+                f'<small style="font-weight:400;color:var(--muted);font-size:.95rem">({total} available)</small></h2>'
+                f'<p style="color:var(--muted);margin-bottom:.7rem">{sub}</p>'
+                f'<div class="related">{cards}</div>{more}</div></section>')
 
     blocks = "".join(block(t) for t in ("Platinum", "Gold", "Silver"))
     return f"""<!DOCTYPE html>
@@ -646,17 +704,18 @@ def hub_html(numbers):
 # ===========================================================================
 # SITEMAPS
 # ===========================================================================
-def write_sitemaps(numbers):
+def write_sitemaps(numbers, indexable):
+    indexable_nums = [n for n in numbers if n["digits"] in indexable]
     lines = ['<?xml version="1.0" encoding="UTF-8"?>',
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-             f'  <url><loc>{BASE_URL}/numbers/</loc><changefreq>daily</changefreq><priority>0.9</priority></url>']
-    for n in numbers:
-        lines.append(f'  <url><loc>{BASE_URL}/numbers/{slug_for(n)}/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>')
+             f'  <url><loc>{BASE_URL}/numbers/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>']
+    for n in indexable_nums:
+        lines.append(f'  <url><loc>{BASE_URL}/numbers/{slug_for(n)}/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>')
     lines.append('</urlset>')
     p = os.path.join(PROJECT_DIR, "sitemap-numbers.xml")
     with open(p, "w", encoding="utf-8") as fh:
         fh.write("\n".join(lines))
-    print(f"  wrote sitemap-numbers.xml ({len(numbers)+1} URLs)")
+    print(f"  wrote sitemap-numbers.xml ({len(indexable_nums)+1} URLs — {len(indexable_nums)} indexable numbers + hub)")
 
     idx = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -684,21 +743,35 @@ def main():
     out_root = os.path.join(PROJECT_DIR, "numbers")
     os.makedirs(out_root, exist_ok=True)
 
+    indexable = pick_indexable(numbers)
+    print(f"  -> {len(indexable)} numbers kept indexable (top by pattern score); rest noindex,follow")
+
     written = 0
     for num in numbers:
         out_dir = os.path.join(out_root, slug_for(num))
         os.makedirs(out_dir, exist_ok=True)
         with open(os.path.join(out_dir, "index.html"), "w", encoding="utf-8") as fh:
-            fh.write(page_html(num, numbers))
+            fh.write(page_html(num, numbers, indexable))
         written += 1
         if written % 500 == 0:
             print(f"  ...{written} pages")
+
+    # Prune stale number dirs — numbers no longer in live inventory (sold) would
+    # otherwise linger as thin, index,follow orphans that waste crawl budget.
+    current_slugs = {slug_for(n) for n in numbers}
+    pruned = 0
+    for entry in os.listdir(out_root):
+        full = os.path.join(out_root, entry)
+        if os.path.isdir(full) and entry.startswith("etisalat-") and entry not in current_slugs:
+            shutil.rmtree(full, ignore_errors=True)
+            pruned += 1
+    print(f"  pruned {pruned} stale number dirs (no longer in inventory)")
 
     with open(os.path.join(out_root, "index.html"), "w", encoding="utf-8") as fh:
         fh.write(hub_html(numbers))
     print(f"  wrote /numbers/index.html (hub)")
 
-    write_sitemaps(numbers)
+    write_sitemaps(numbers, indexable)
     print(f"\nDone: {written} per-number pages + hub + sitemaps.")
     return 0
 
