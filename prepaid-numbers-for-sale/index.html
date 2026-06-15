@@ -205,6 +205,7 @@
       <div class="success-panel" id="buySuccess">
         <h3>✅ Interest registered</h3>
         <p>Tap below to message us on WhatsApp and we'll verify the listing and follow up.</p>
+        <p id="buyApiNote" style="display:none;color:var(--red,#E30613);font-size:.86rem;font-weight:600;margin:.5rem 0 0">We couldn't auto-submit your interest. Please tap <strong>Continue on WhatsApp</strong> below — that guarantees we receive it.</p>
         <a href="#" id="buyWaBtn" class="btn btn-wa btn-lg" target="_blank" rel="noopener noreferrer" data-no-autolead style="margin-top:.4rem">Continue on WhatsApp</a>
       </div>
     </div>
@@ -343,7 +344,11 @@
       try{fbq('track','Lead',{content_name:'Prepaid Buyer Interest',content_category:'buy_number',value:val,currency:'AED'},{eventID:token});}catch(x){}
       var payload={name:name,phone:phone,city:'',listing_id:(BUYCTX.id?parseInt(BUYCTX.id,10):''),masked_number:BUYCTX.num,offered_price:(offer===null?'':offer),token:token,ref:buildRefCode('BUYNUM',token),source_site:SITE,company:document.getElementById('buyCompany').value||''};
       if(tok)payload.ts_token=tok;
-      try{fetch(CRM_API+'/api/prepaid-interest',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),keepalive:true}).catch(function(){});}catch(e){}
+      // CRM persist. WhatsApp (below) is the guaranteed parallel capture; if the POST is rejected/fails
+      // we reveal a note making WhatsApp the explicit next step (the old empty .catch() hid 403s).
+      var buyNote=document.getElementById('buyApiNote');if(buyNote)buyNote.style.display='none';
+      function buyApiFailed(){if(buyNote)buyNote.style.display='block';}
+      try{fetch(CRM_API+'/api/prepaid-interest',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),keepalive:true}).then(function(r){if(!r.ok)buyApiFailed();}).catch(function(){buyApiFailed();});}catch(e){buyApiFailed();}
       var waMsg='🔎 Buyer interest — '+SITE+'\n\nInterested in: '+(BUYCTX.num||'a listed number')+(BUYCTX.op?(' ('+opLabel(BUYCTX.op)+')'):'')+(BUYCTX.price?('\nListed price: AED '+BUYCTX.price):'')+(offer!==null?('\nMy offer: AED '+offer):'')+'\nName: '+name+'\nContact: '+phone;
       document.getElementById('buyWaBtn').setAttribute('href',waHref(waMsg,'BUYNUM',token));
       buyForm.style.display='none';
