@@ -103,6 +103,9 @@
     .listing-op{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:.18rem .5rem;border-radius:999px;background:#FDE7E8;color:var(--red,#E30613);align-self:flex-start}
     .listing-price{font-size:1.05rem;font-weight:700;color:#111}
     .listing-meta{font-size:.76rem;color:var(--muted,#6b7280)}
+    .listing-card.sold{position:relative;opacity:.72;background:#fafafa}
+    .listing-card.sold .listing-num{color:#9ca3af;text-decoration:line-through}
+    .sold-ribbon{position:absolute;top:10px;right:-2px;background:#111;color:#fff;font-size:.66rem;font-weight:800;letter-spacing:1px;padding:.18rem .55rem;border-radius:4px 0 0 4px}
     .gallery-state{text-align:center;padding:2rem;color:var(--muted,#6b7280);grid-column:1/-1}
     .field{margin-bottom:14px}
     .field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:5px;color:#1a1a1a}
@@ -291,6 +294,16 @@
       if(!list.length){grid.innerHTML='<div class="gallery-state">No listings match this filter. <a href="#" id="clearFilters">Clear filters</a>.</div>';var c=document.getElementById('clearFilters');if(c)c.addEventListener('click',function(e){e.preventDefault();FILT={operator:'',prefix:'',sort:FILT.sort};document.getElementById('fOperator').value='';document.querySelectorAll('.prefix-chip').forEach(function(x){x.classList.toggle('active',x.dataset.p==='');});applyFilters();});return;}
       grid.innerHTML=list.map(function(r){
         var price=(r.asking_price!=null)?('AED '+r.asking_price):'Best offer';
+        if(r.sold){
+          return '<div class="listing-card sold">'
+            +'<span class="sold-ribbon">SOLD</span>'
+            +'<div class="listing-num">'+esc(r.number||r.masked_number||'•••••')+'</div>'
+            +(r.operator?'<span class="listing-op">'+esc(opLabel(r.operator))+'</span>':'')
+            +'<div class="listing-price">'+esc(price)+'</div>'
+            +'<div class="listing-meta">Sold — no longer available</div>'
+            +'<button class="btn" disabled style="margin-top:.3rem;background:#e5e7eb;color:#6b7280;cursor:not-allowed">Sold</button>'
+            +'</div>';
+        }
         return '<div class="listing-card">'
           +'<div class="listing-num">'+esc(r.number||r.masked_number||'•••••')+'</div>'
           +(r.operator?'<span class="listing-op">'+esc(opLabel(r.operator))+'</span>':'')
