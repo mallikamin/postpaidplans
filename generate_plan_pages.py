@@ -553,6 +553,102 @@ PAGES.append(dict(
     order=["unldata500","gold500","platinum","local1200","unlcalls600","unllocal325","unl1country","freedom250","newfreedom260","freedom325","emirati"],
 ))
 
+# 6) UNLIMITED LOCAL CALLS PLAN
+PAGES.append(dict(
+    slug="etisalat-unlimited-local-calls-plan",
+    ctx="",
+    title="Etisalat Unlimited Local Calls Plan in the UAE 2026 | From AED 325",
+    meta_desc="The Etisalat (e&) unlimited local calls plan in the UAE, unlimited calls to any UAE number, non-stop data and a free VIP number from AED 325/month. Official e& partner, same-day SIM delivery.",
+    keywords="etisalat unlimited local calls, etisalat unlimited local minutes plan, etisalat postpaid unlimited calls uae, unlimited local calls plan uae, etisalat unlimited local calls 325, etisalat unlimited minutes plan",
+    breadcrumb="Etisalat Unlimited Local Calls Plan",
+    lb_name="Postpaid Plans UAE, Etisalat Unlimited Local Calls Plan",
+    lb_desc="Compare and order the Etisalat (e&) unlimited local calls postpaid plans in the UAE, unlimited calls to any UAE number, non-stop data and a free VIP number from AED 325/month, delivered same day with no dealer mark-up.",
+    itemlist_name="Etisalat Plans with Unlimited Local Calls",
+    h1='Etisalat <span class="hl">Unlimited Local Calls</span> Plan in the UAE',
+    lead="If you are on the phone all day to colleagues, customers, delivery drivers or family inside the UAE, you should never have to watch a minute counter. Here are the Etisalat (e&amp;) postpaid plans that give genuinely unlimited local calls, what each one costs, and which is the best value for how you actually use your phone.",
+    quick_answer="The <strong>Unlimited Local Calls 325 at AED 325/month</strong> gives unlimited calls to any UAE number, non-stop data, 3GB roaming and a free Silver VIP number. If you also call abroad, the <strong>Unlimited Calls 600 Flexi (AED 360)</strong> adds unlimited flexi minutes that work locally and internationally; the <strong>Gold Plan 500</strong> and <strong>Platinum Plan</strong> bundle unlimited local + international calls with unlimited data. Every plan includes a free VIP number and same-day delivery.",
+    prose='''<h2>Who actually needs unlimited local calls</h2>
+      <p>Unlimited high-speed data gets all the attention, but for a huge number of UAE residents the bottleneck is <strong>minutes, not megabytes</strong>. If your day is long voice calls, coordinating a team, a sales desk, a family that prefers to call rather than message, then an unlimited <em>local</em> calling plan removes the one thing that makes a bill jump unexpectedly. The Unlimited Local Calls 325 is built exactly for that: talk to any UAE number for as long as you like, with non-stop data underneath for everything else.</p>
+      <p>The decision after that is simple, and it is about <strong>where</strong> you call. If every call stays inside the UAE, the Unlimited Local Calls 325 is the cleanest fit. If you also ring family or suppliers abroad, do not buy a local plan and add packs on top, step to the Unlimited Calls 600 Flexi, whose minutes work both locally and internationally, or to the Gold and Platinum plans, which include unlimited international calling alongside unlimited data. UAE nationals get unlimited local calls with a VIP number on the Emirati Freedom plan.</p>''',
+    table_heading="Etisalat plans with unlimited local calls compared",
+    which_heading="Which unlimited-calls plan is right for you?",
+    which_list='''<li><strong>All your calls stay in the UAE:</strong> Unlimited Local Calls 325, unlimited UAE calls + non-stop data with a free Silver number.</li>
+        <li><strong>You also call abroad:</strong> Unlimited Calls 600 Flexi (AED 360), unlimited flexi minutes that work locally and internationally, plus 50GB data.</li>
+        <li><strong>You want no limits at all:</strong> Gold Plan 500 or Platinum Plan, unlimited local + international calls and unlimited data.</li>
+        <li><strong>You call one country constantly</strong> (India, Pakistan, the Philippines): Unlimited 1 Country 325, unlimited calls to that one country.</li>
+        <li><strong>UAE national:</strong> Emirati Freedom, unlimited local calls and unlimited high-speed data with a VIP number.</li>''',
+    faq_heading="Etisalat Unlimited Local Calls Plan, FAQ",
+    faqs=[
+        ("Which Etisalat plan has unlimited local calls?",
+         "The Unlimited Local Calls 325 at AED 325/month gives unlimited calls to any UAE number, plus non-stop data, 3GB roaming and a free Silver VIP number. The Unlimited Calls 600 Flexi, Gold Plan 500 and Platinum Plan also include unlimited local calls (and add unlimited international calling)."),
+        ("How much is the Etisalat unlimited local calls plan?",
+         "Unlimited local calls start at AED 325/month on the Unlimited Local Calls 325. Plans that add unlimited international calling on top, the Unlimited Calls 600 Flexi, Gold Plan 500 and Platinum Plan, are AED 360, AED 500 and AED 1,000/month respectively."),
+        ("Does unlimited local calls include data?",
+         "Yes. The Unlimited Local Calls 325 includes non-stop data alongside the unlimited UAE calls. If you need unlimited high-speed data as well as unlimited calls, the Gold Plan 500 and Platinum Plan bundle both."),
+        ("Do the unlimited calls work for international numbers too?",
+         "The Unlimited Local Calls 325 covers UAE numbers only. For unlimited calls abroad, choose the Unlimited Calls 600 Flexi (flexi minutes that work locally and internationally), the Unlimited 1 Country 325 (unlimited calls to a single country), or the Gold and Platinum plans."),
+        ("Does the unlimited local calls plan come with a free number?",
+         "Yes, it includes a free Silver VIP number. Browse the live inventory of 2,500+ numbers at postpaidplans.com/choose-number, pick a memorable line, and we deliver the SIM the same day."),
+        ("Is there a contract on the unlimited local calls plan?",
+         "Etisalat postpaid plans carry a commitment of 12 to 24 months depending on the plan and the VIP number you choose, which underpins the pricing and the free number. We confirm the exact term before you order."),
+        ("Does the AED 325 price include VAT?",
+         "No, the AED 325 price is set by Etisalat and excludes 5% VAT, which UAE law adds to telecom services on your monthly bill. There is no dealer mark-up on top."),
+        ("Can I keep my current number on an unlimited local calls plan?",
+         "Yes. You can port your existing mobile number, including from du, onto the plan, and your line keeps working until the switch completes. We guide you through the official porting request."),
+    ],
+    cta_h2='Talk all day on UAE calls from <span class="gold-text">AED 325</span>',
+    cta_p="Lock the Unlimited Local Calls 325 with a free Silver number and we will deliver the SIM the same day, or message us and we will match the right unlimited-calls plan to who you call.",
+    cta_ctx="Hi, I'd like the Etisalat unlimited local calls plan.",
+    order=["unllocal325","unlcalls600","gold500","unl1country","platinum","unldata500","local1200","freedom250","newfreedom260","freedom325","emirati"],
+))
+
+# 7) CANCEL / SWITCH AN ETISALAT POSTPAID PLAN
+PAGES.append(dict(
+    slug="cancel-etisalat-postpaid-plan",
+    ctx="",
+    title="How to Cancel an Etisalat Postpaid Plan in the UAE 2026 (or Switch & Save)",
+    meta_desc="How to cancel your Etisalat (e&) postpaid plan in the UAE, the steps, early-termination terms, and why downgrading or porting often saves more than cancelling. Official e& partner, same-day setup.",
+    keywords="etisalat postpaid plan cancellation, cancel etisalat postpaid plan, how to cancel etisalat plan uae, etisalat early termination, downgrade etisalat plan, switch etisalat plan uae",
+    breadcrumb="Cancel Etisalat Postpaid Plan",
+    lb_name="Postpaid Plans UAE, Cancel or Switch an Etisalat Postpaid Plan",
+    lb_desc="How to cancel an Etisalat (e&) postpaid plan in the UAE, the steps and early-termination terms, plus cheaper plans to downgrade or switch to instead, set up the same day with no dealer mark-up.",
+    itemlist_name="Cheaper Etisalat Plans to Switch To",
+    h1='How to <span class="hl">Cancel</span> an Etisalat Postpaid Plan (or Switch &amp; Save)',
+    lead="Thinking of cancelling your Etisalat (e&amp;) postpaid plan? Here is exactly how cancellation works, what an early exit can cost, and the part most people miss, if you are leaving because the plan is too expensive or no longer fits, downgrading or porting to a better-value plan usually saves more than walking away. We can set that up the same day.",
+    quick_answer="To cancel an Etisalat postpaid plan you settle any outstanding balance and request termination through Etisalat, the My Etisalat app, by calling 101, or at an Etisalat outlet with your Emirates ID. A plan still inside its commitment period may carry an <strong>early-termination charge</strong>, so confirm your exact terms first. Before you cancel, it is often cheaper to <strong>downgrade</strong> to a lighter plan or <strong>port your number</strong> onto better value, we can arrange either the same day with no dealer mark-up.",
+    prose='''<h2>How to cancel an Etisalat postpaid plan</h2>
+      <p>Cancellation itself is straightforward: clear any outstanding bill, then request termination through an official Etisalat channel, the My Etisalat app, by calling 101, or in person at an Etisalat outlet with your original Emirates ID. If your line is still inside its minimum commitment period, Etisalat applies its standard <strong>early-termination terms</strong>, so it is worth checking exactly where you stand before you act. Etisalat sets and can change these terms, so always confirm the current figure with them directly.</p>
+      <h2>Before you cancel: downgrade or switch instead</h2>
+      <p>Most people who want to cancel are really reacting to one of two things, the bill is higher than they use, or the plan no longer fits their life. Cancelling fixes neither cheaply if it triggers an exit charge. <strong>Downgrading</strong> to a lighter Freedom plan keeps your number and your line while cutting the monthly cost. <strong>Porting</strong> lets you carry your number onto a better-value plan, even from du, with the line live until the switch completes. As an authorized e&amp; dealer we can do either at Etisalat's own price, add a free VIP number, and deliver the SIM the same day, so a frustrating bill becomes a better plan instead of a cancellation fee.</p>''',
+    table_heading="Cheaper Etisalat plans to downgrade or switch to",
+    which_heading="Cancel, downgrade, or switch, which is right for you?",
+    which_list='''<li><strong>Leaving the UAE for good:</strong> cancel, settle the final bill and request termination; confirm any early-exit terms with Etisalat first.</li>
+        <li><strong>Bill is higher than you use:</strong> downgrade to a lighter Freedom plan (from AED 188) and keep your number, no need to cancel.</li>
+        <li><strong>Want a better deal or different network:</strong> port your number onto better value, we set it up the same day with a free VIP number.</li>
+        <li><strong>Plan no longer fits</strong> (more calls, less data, or vice-versa): switch tiers rather than cancel, message us and we will match it.</li>''',
+    faq_heading="Cancelling an Etisalat Postpaid Plan, FAQ",
+    faqs=[
+        ("How do I cancel my Etisalat postpaid plan?",
+         "Settle any outstanding balance, then request termination through an official Etisalat channel, the My Etisalat app, by calling 101, or at an Etisalat outlet with your original Emirates ID. If you are inside your commitment period, ask Etisalat about early-termination terms before you confirm."),
+        ("Is there a fee to cancel an Etisalat plan early?",
+         "A plan still inside its minimum commitment period may carry an early-termination charge, which is what unlocks the discounted pricing and any free VIP number. Etisalat sets these terms, so confirm your exact figure with them, and consider downgrading or porting instead, which often costs less."),
+        ("Can I downgrade my Etisalat plan instead of cancelling?",
+         "Often yes, and it is usually cheaper. Moving to a lighter Freedom plan keeps your number and avoids an exit charge while cutting your monthly cost. Message us on WhatsApp +971 56 902 8087 with your current plan and we will tell you what is possible."),
+        ("Can I keep my number if I cancel and switch?",
+         "Yes. UAE number portability lets you carry your existing mobile number onto a new plan, including from du, instead of losing it. Your line keeps working until the switch completes, so you never go dark."),
+        ("What do I need to cancel an Etisalat line?",
+         "Your original Emirates ID and a cleared balance. Cancellation is done through Etisalat directly; as a dealer we cannot terminate a line for you, but we can help you downgrade or port to a better-value plan the same day."),
+        ("I am leaving the UAE, what should I do with my line?",
+         "If you are leaving permanently, settle the final bill and request termination through Etisalat, confirming any early-exit terms. If you are leaving temporarily, ask Etisalat about suspension options so you can keep your number for when you return."),
+        ("Is it better to cancel or switch my Etisalat plan?",
+         "If you are staying in the UAE, switching almost always beats cancelling, you keep your number, avoid going without a line, and often land a lower bill. Cancelling makes sense mainly if you are leaving the country. We can build the cheaper plan and deliver the SIM the same day."),
+    ],
+    cta_h2='Before you cancel, let us find you a <span class="gold-text">better-value plan</span>',
+    cta_p="Tell us your current Etisalat plan and what is bothering you about it, cost, data or minutes, and we will match a cheaper or better-fitting plan, keep your number, and deliver the SIM the same day.",
+    cta_ctx="Hi, I'm thinking of cancelling my Etisalat plan, can you help me downgrade or switch to something better value?",
+    order=["freedom250","newfreedom260","unllocal325","freedom325","unldata500","unlcalls600","unl1country","gold500","local1200","emirati","platinum"],
+))
+
 
 def build(page):
     html = HEAD
