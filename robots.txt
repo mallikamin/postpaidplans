@@ -3,6 +3,12 @@
 
 User-agent: *
 Allow: /
+# Non-page endpoints Google crawled as 404s: Google Sheets export fragments (choose-number
+# inventory fetch) + the TikTok event API. These are not content — keep crawlers off them so
+# they drop out of GSC "Not found (404)".
+Disallow: /api/
+Disallow: /gviz/
+Disallow: /export
 
 # Sitemaps (index covers the main sitemap + the per-number sitemap)
 Sitemap: https://postpaidplans.com/sitemap-index.xml

@@ -34,12 +34,23 @@ function handleWhatsAppRedirect(request) {
   return Response.redirect(target, 302);
 }
 
+// Parent paths Google crawls that have no index page of their own → 301 to a real page so they
+// leave GSC "Not found (404)" and pass crawl equity. /ar/blog/ holds AR posts but has no hub index.
+function legacyPathRedirect(url) {
+  const p = url.pathname.replace(/\/+$/, "");
+  if (p === "/ar/blog") return `https://${CANONICAL_HOST}/ar/`;
+  return null;
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
     const canonical = canonicalRedirect(request, url);
     if (canonical) return canonical;
+
+    const legacy = legacyPathRedirect(url);
+    if (legacy) return Response.redirect(legacy, 301);
 
     if (url.pathname === "/r") {
       return handleWhatsAppRedirect(request);
