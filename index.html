@@ -332,6 +332,21 @@
     .num-cta .side{text-align:center}
     .num-sample{font-family:'DM Sans', sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:.04em;color:var(--gold);background:rgba(255,255,255,.06);border:1px dashed rgba(201,169,98,.5);border-radius:12px;padding:1rem}
 
+    /* Installments deal band */
+    .deal-band{display:grid;grid-template-columns:1.1fr .9fr;gap:1.8rem;align-items:center;background:linear-gradient(135deg,#FFF5F5 0%,#FDE7E8 100%);border:1.5px solid #F6C9CC;border-radius:22px;padding:2.2rem 2.4rem;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:transform .15s, box-shadow .15s}
+    .deal-band:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(227,6,19,.16)}
+    .deal-band h2{font-size:1.85rem;margin:.3rem 0 .5rem;color:var(--ink)}
+    .deal-band h2 .hl{color:var(--red)}
+    .deal-band p{color:var(--muted);font-size:.97rem;margin:0 0 1rem;line-height:1.55}
+    .deal-band .db-cta{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;color:var(--red)}
+    .deal-band .db-imgs{display:flex;gap:1rem;justify-content:center;align-items:center}
+    .deal-band .db-imgs img{width:auto;max-width:48%;max-height:240px;height:auto;border-radius:16px;box-shadow:0 8px 22px rgba(0,0,0,.12)}
+    @media(max-width:760px){
+      .deal-band{grid-template-columns:1fr;text-align:center;padding:1.9rem 1.4rem}
+      .deal-band .db-cta{justify-content:center}
+      .deal-band .db-imgs{margin-top:1.2rem}
+    }
+
     /* FAQ */
     .faq-item{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:.7rem;overflow:hidden}
     .faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:1.05rem 1.3rem;font-family:'DM Sans', sans-serif;font-weight:600;font-size:1rem;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:1rem}
@@ -479,6 +494,24 @@
           <p style="font-size:.8rem;color:rgba(255,255,255,.6);margin-top:.7rem">Silver &middot; Gold &middot; Platinum patterns</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ INSTALLMENTS DEAL BAND ============ -->
+  <section class="block">
+    <div class="wrap">
+      <a class="deal-band" href="/mobile-phone-installments/" onclick="track('home_installments')">
+        <div class="db-text">
+          <span class="eyebrow">&#128241; Phone on installments</span>
+          <h2>Buy the latest phone <span class="hl">on installments</span></h2>
+          <p>iPhone 17 Pro from AED 198/mo &middot; Samsung Galaxy S26 Ultra from AED 186/mo &middot; pay monthly with your Etisalat postpaid plan and free VIP number.</p>
+          <span class="db-cta">See phones &amp; how it works &rarr;</span>
+        </div>
+        <div class="db-imgs">
+          <img src="/assets/devices/iphone-17-pro.jpg" alt="iPhone 17 Pro on Etisalat installments" loading="lazy" decoding="async">
+          <img src="/assets/devices/galaxy-s26-ultra.jpg" alt="Samsung Galaxy S26 Ultra on Etisalat installments" loading="lazy" decoding="async">
+        </div>
+      </a>
     </div>
   </section>
 
