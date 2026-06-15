@@ -37,8 +37,9 @@ function handleWhatsAppRedirect(request) {
 // Parent paths Google crawls that have no index page of their own → 301 to a real page so they
 // leave GSC "Not found (404)" and pass crawl equity. /ar/blog/ holds AR posts but has no hub index.
 function legacyPathRedirect(url) {
-  const p = url.pathname.replace(/\/+$/, "");
-  if (p === "/ar/blog") return `https://${CANONICAL_HOST}/ar/`;
+  // /ar/blog/ is now a real hub page. Send the slash-less variant to it (the trailing-slash
+  // version is served directly by static assets — matching "/ar/blog" only avoids a redirect loop).
+  if (url.pathname === "/ar/blog") return `https://${CANONICAL_HOST}/ar/blog/`;
   return null;
 }
 

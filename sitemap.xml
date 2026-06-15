@@ -114,6 +114,19 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://postpaidplans.com/blog/etisalat-vs-du-postpaid-plans-uae/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://postpaidplans.com/blog/etisalat-vs-du-postpaid-plans-uae/"/>
   </url>
+
+  <!-- Arabic blog: hub + long-tail guides (2026-06-15) -->
+  <url>
+    <loc>https://postpaidplans.com/ar/blog/</loc>
+    <lastmod>2026-06-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://postpaidplans.com/ar/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://postpaidplans.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://postpaidplans.com/blog/"/>
+  </url>
+  <url><loc>https://postpaidplans.com/ar/blog/best-etisalat-family-plan-uae/</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://postpaidplans.com/ar/blog/etisalat-plans-under-200-aed/</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://postpaidplans.com/ar/blog/etisalat-international-calling-plans-uae/</loc><lastmod>2026-06-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
   <url><loc>https://postpaidplans.com/blog/silver-gold-platinum-numbers-difference/</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://postpaidplans.com/blog/how-to-choose-vip-number-dubai/</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://postpaidplans.com/blog/top-fancy-numbers-uae/</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
