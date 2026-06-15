@@ -131,6 +131,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://postpaidplans.com/blog/etisalat-esim-uae-activation-guide-2026/"/>
   </url>
 
+  <!-- Etisalat/eSIM landing slugs (2026-06-16) -->
+  <url><loc>https://postpaidplans.com/etisalat-esim/</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://postpaidplans.com/etisalat-postpaid-esim/</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://postpaidplans.com/uae-esim-number/</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://postpaidplans.com/premium-esim-numbers/</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
   <!-- Arabic blog: hub + long-tail guides (2026-06-15) -->
   <url>
     <loc>https://postpaidplans.com/ar/blog/</loc>
