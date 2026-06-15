@@ -32,6 +32,12 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdro
 .nav-links{display:flex;align-items:center;gap:1.4rem}
 .nav-links a{font-weight:500;font-size:.96rem;color:var(--body);white-space:nowrap}
 .nav-links a:hover{color:var(--red)}
+.has-drop{position:relative}
+.has-drop>a::after{content:'\25be';font-size:.7em;margin-left:.3rem;opacity:.7}
+.drop-menu{position:absolute;top:100%;left:0;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.12);padding:.4rem;display:none;flex-direction:column;z-index:70}
+.has-drop:hover .drop-menu,.has-drop:focus-within .drop-menu{display:flex}
+.drop-menu a{padding:.55rem .8rem;border-radius:8px}
+.drop-menu a:hover{background:var(--bg-mute);color:var(--red)}
 .nav-cta{display:flex;align-items:center;gap:.6rem}
 .burger{display:none;background:none;border:none;cursor:pointer;font-size:1.6rem;color:var(--ink)}
 .mobile-menu{display:none;flex-direction:column;gap:.2rem;padding:.5rem 22px 1.2rem;border-bottom:1px solid var(--line);background:#fff}
