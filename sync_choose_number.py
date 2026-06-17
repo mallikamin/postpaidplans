@@ -73,7 +73,7 @@ leaks = {k: t.count(k) for k in
           "etisalat-logo", "ec-bar", "../emirati/", "../#plans", "gold-numbers/"]}
 feats = {k: t.count(k) for k in
          ["btn-reserve", "btn-share", 'data-category="platinum"', "PARTNER_API",
-          "1qAw1YQkKEbq", "G-B4813N8J6J", "3266474320203798", "postpaidplans.com"]}
+          "1YVzDy7ZE5yQ", "G-B4813N8J6J", "3266474320203798", "postpaidplans.com"]}
 print("LEAKS (should all be 0):")
 for k, v in leaks.items():
     print(f"  {v:3d}  {k}")
