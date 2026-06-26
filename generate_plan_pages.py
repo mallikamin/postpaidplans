@@ -25,6 +25,10 @@ PLANS = {
                       "Non-stop data at 3Mbps, 1,000 local minutes, 2GB roaming and a free Silver VIP number.", ""),
     "newfreedom260":("New Freedom Plan 260", "195", "260", "Non-stop", "1,000 local", "2GB", "Silver", False,
                       "Non-stop data, 1,000 local minutes, 2GB roaming and a free Silver VIP number.", ""),
+    "newfreedom375local":("New Freedom Plan 375 Local", "263", "375", "Non-stop @50Mbps", "2,200 local", "5GB", "Silver", True,
+                      "Non-stop data at up to 50Mbps, 2,200 local minutes, 5GB roaming, 100 Wi-Fi hours, Smiles Unlimited, STARZPLAY and GoChat Stickers, plus a free Silver VIP number. 30% off for the first 6 months.", ""),
+    "newfreedom375flexi":("New Freedom Plan 375 Flexi", "263", "375", "Non-stop @50Mbps", "1,100 flexi", "5GB", "Silver", False,
+                      "Non-stop data at up to 50Mbps, 1,100 flexi minutes (local and international), 5GB roaming, 100 Wi-Fi hours, Smiles Unlimited, STARZPLAY and GoChat Stickers, plus a free Silver VIP number. 30% off for the first 6 months.", ""),
     "freedom325":   ("Freedom Plan 325", "228", "325", "Non-stop", "More local", "3GB", "Silver", False,
                       "Non-stop data, more local minutes, 3GB roaming and a free Silver VIP number.", ""),
     "unldata500":   ("Freedom Unlimited Data 500", "300", "600", "Unlimited high-speed", "1,000 flexi", "5GB", "Silver", False,
@@ -44,7 +48,7 @@ PLANS = {
     "platinum":     ("Platinum Plan", "1,000", "", "Unlimited everything", "Unltd local + intl", "20GB", "Platinum", False,
                       "Unlimited everything, unlimited data, unlimited local and international minutes, 20GB roaming and a free Platinum VIP number.", ""),
 }
-DEFAULT_ORDER = ["freedom250","newfreedom260","freedom325","unldata500","unllocal325",
+DEFAULT_ORDER = ["freedom250","newfreedom260","newfreedom375local","newfreedom375flexi","freedom325","unldata500","unllocal325",
                  "unl1country","unlcalls600","gold500","local1200","emirati","platinum"]
 
 
@@ -347,7 +351,7 @@ PAGES.append(dict(
     cta_h2='Set up the right <span class="gold-text">family plan</span> today',
     cta_p="Tell us how many lines you need and how each person uses their phone, we will build the most cost-effective Etisalat family setup and deliver every SIM the same day with a free VIP number.",
     cta_ctx="Hi, please help me set up Etisalat postpaid plans for my family.",
-    order=["unldata500","gold500","freedom250","newfreedom260","unllocal325","unl1country","unlcalls600","emirati","freedom325","local1200","platinum"],
+    order=["unldata500","gold500","freedom250","newfreedom260","newfreedom375local","newfreedom375flexi","unllocal325","unl1country","unlcalls600","emirati","freedom325","local1200","platinum"],
 ))
 
 # 2) PLANS UNDER AED 200
@@ -397,7 +401,7 @@ PAGES.append(dict(
     cta_h2='Get a great Etisalat line <span class="gold-text">under AED 200</span>',
     cta_p="Pick the Freedom Plan 250 at AED 188 with a free Silver number, and we will deliver the SIM the same day across the UAE, or message us and we will confirm the best current budget option.",
     cta_ctx="Hi, I'd like an Etisalat postpaid plan under AED 200.",
-    order=["freedom250","newfreedom260","freedom325","emirati","unldata500","unl1country","unllocal325","unlcalls600","gold500","local1200","platinum"],
+    order=["freedom250","newfreedom260","newfreedom375local","newfreedom375flexi","freedom325","emirati","unldata500","unl1country","unllocal325","unlcalls600","gold500","local1200","platinum"],
 ))
 
 # 3) CHEAPEST POSTPAID PLAN
@@ -447,7 +451,7 @@ PAGES.append(dict(
     cta_h2='Get the cheapest Etisalat line at <span class="gold-text">AED 188</span>',
     cta_p="Lock the Freedom Plan 250 with a free Silver number and we will deliver the SIM the same day across the UAE, Etisalat's price, no dealer mark-up.",
     cta_ctx="Hi, I'd like the cheapest Etisalat postpaid plan (Freedom Plan 250).",
-    order=["freedom250","newfreedom260","emirati","freedom325","unldata500","unl1country","unllocal325","unlcalls600","gold500","local1200","platinum"],
+    order=["freedom250","newfreedom260","newfreedom375local","newfreedom375flexi","emirati","freedom325","unldata500","unl1country","unllocal325","unlcalls600","gold500","local1200","platinum"],
 ))
 
 # 4) BUSINESS PLANS
@@ -498,7 +502,7 @@ PAGES.append(dict(
     cta_h2='Equip your team with the right <span class="gold-text">Etisalat business plans</span>',
     cta_p="Tell us how many lines you need and how your team uses data and calls, we will build a cost-effective Etisalat setup with VIP numbers and deliver every SIM the same day.",
     cta_ctx="Hi, please help me set up Etisalat business postpaid plans for my company.",
-    order=["unlcalls600","gold500","unldata500","unl1country","local1200","platinum","freedom250","newfreedom260","unllocal325","freedom325","emirati"],
+    order=["unlcalls600","gold500","unldata500","unl1country","local1200","platinum","freedom250","newfreedom260","newfreedom375local","newfreedom375flexi","unllocal325","freedom325","emirati"],
 ))
 
 # 5) BEST UNLIMITED DATA PLAN
@@ -550,7 +554,7 @@ PAGES.append(dict(
     cta_h2='Get unlimited Etisalat data from <span class="gold-text">AED 300</span>',
     cta_p="Lock the Freedom Unlimited Data 500 with a free Silver number and we will deliver the SIM the same day, or message us and we will match the right unlimited plan to how you use your phone.",
     cta_ctx="Hi, I'd like the best Etisalat unlimited data plan.",
-    order=["unldata500","gold500","platinum","local1200","unlcalls600","unllocal325","unl1country","freedom250","newfreedom260","freedom325","emirati"],
+    order=["unldata500","gold500","platinum","local1200","unlcalls600","unllocal325","unl1country","freedom250","newfreedom260","newfreedom375local","newfreedom375flexi","freedom325","emirati"],
 ))
 
 # 6) UNLIMITED LOCAL CALLS PLAN
@@ -599,7 +603,7 @@ PAGES.append(dict(
     cta_h2='Talk all day on UAE calls from <span class="gold-text">AED 325</span>',
     cta_p="Lock the Unlimited Local Calls 325 with a free Silver number and we will deliver the SIM the same day, or message us and we will match the right unlimited-calls plan to who you call.",
     cta_ctx="Hi, I'd like the Etisalat unlimited local calls plan.",
-    order=["unllocal325","unlcalls600","gold500","unl1country","platinum","unldata500","local1200","freedom250","newfreedom260","freedom325","emirati"],
+    order=["unllocal325","unlcalls600","gold500","unl1country","platinum","unldata500","local1200","freedom250","newfreedom260","newfreedom375local","newfreedom375flexi","freedom325","emirati"],
 ))
 
 # 7) CANCEL / SWITCH AN ETISALAT POSTPAID PLAN
@@ -646,7 +650,7 @@ PAGES.append(dict(
     cta_h2='Before you cancel, let us find you a <span class="gold-text">better-value plan</span>',
     cta_p="Tell us your current Etisalat plan and what is bothering you about it, cost, data or minutes, and we will match a cheaper or better-fitting plan, keep your number, and deliver the SIM the same day.",
     cta_ctx="Hi, I'm thinking of cancelling my Etisalat plan, can you help me downgrade or switch to something better value?",
-    order=["freedom250","newfreedom260","unllocal325","freedom325","unldata500","unlcalls600","unl1country","gold500","local1200","emirati","platinum"],
+    order=["freedom250","newfreedom260","newfreedom375local","newfreedom375flexi","unllocal325","freedom325","unldata500","unlcalls600","unl1country","gold500","local1200","emirati","platinum"],
 ))
 
 
