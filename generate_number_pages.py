@@ -52,10 +52,11 @@ GA4 = "G-B4813N8J6J"  # real PPP GA4 (hardcoded so regen keeps tracking; no post
 INDEXABLE_LIMIT = 100
 HUB_PER_TIER = 48  # cap per-tier cards on /numbers/ hub (was: all 3,322 → 505 KB sink)
 
-# Same two sheets the /choose-number/ page consumes.
+# Same master sheet the /choose-number/ page consumes.
+# 2026-07-13: was still on the two legacy sheets (1qAw dead-404 since 06-17,
+# 1Lmfsc empty/mismatched schema) — missed in the 06-17 single-source migration.
 SHEETS = [
-    {"id": "1qAw1YQkKEbq-R3LullCBNr0MweGfC2KEO-rot9ff8dw", "gid": "0"},
-    {"id": "1Lmfsc-0H0R0hXv0wddktRwisHI74yu9JfrtxPajm9hk", "gid": "0"},
+    {"id": "1CfIRlk55aGLI2nLBuUFH4pvRu5gT6qSo3aIzh2iDeAo", "gid": "0"},
 ]
 ACCEPTED_CATEGORIES = {"gold": "Gold", "silver": "Silver", "platinum": "Platinum"}
 
