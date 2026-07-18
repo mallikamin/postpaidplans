@@ -56,7 +56,7 @@ HUB_PER_TIER = 48  # cap per-tier cards on /numbers/ hub (was: all 3,322 → 505
 # 2026-07-13: was still on the two legacy sheets (1qAw dead-404 since 06-17,
 # 1Lmfsc empty/mismatched schema) — missed in the 06-17 single-source migration.
 SHEETS = [
-    {"id": "1CfIRlk55aGLI2nLBuUFH4pvRu5gT6qSo3aIzh2iDeAo", "gid": "0"},
+    {"id": "1CoG5IYOxKdeTlOqCYuntfXxOUlOFWlSX9AiDB1ZBBQs", "gid": "0"},
 ]
 ACCEPTED_CATEGORIES = {"gold": "Gold", "silver": "Silver", "platinum": "Platinum"}
 
