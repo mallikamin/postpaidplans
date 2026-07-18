@@ -19,7 +19,7 @@
 - Regenerate after inventory changes: `python generate_number_pages.py` → writes pages + `sitemap-numbers.xml` + `sitemap-index.xml`. The `.py` is excluded from public serving via `.assetsignore` (`*.py`). robots.txt advertises `sitemap-index.xml`.
 
 ## Shared backend (reused, keep identical)
-- WhatsApp conversion number: **`971569028087`** (all WhatsApp links). `tel:` voice line in choose-number stays `+971566999377`.
+- WhatsApp / phone number: **`971569028087`** (the 8087 line) for ALL links — WhatsApp *and* `tel:` voice. **The old 9377 voice line (`+971566999377`) was retired 2026-07-18 (Malik) and must not be reintroduced anywhere.** (Superseded the earlier "keep the tel: voice line as 9377" rule.)
 - `/choose-number/` — the number picker is reused verbatim from uaepremiumnumbers; same Google Sheets inventory + `PARTNER_API` Apps Script. Only domain/canonical/branding were swapped. **Stays functionally the same.**
 - Google Sheets inventory (SHEETS array in choose-number) is shared across all three sites.
 
