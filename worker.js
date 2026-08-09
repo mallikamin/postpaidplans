@@ -34,6 +34,17 @@ function handleWhatsAppRedirect(request) {
   return Response.redirect(target, 302);
 }
 
+// The 3,680 per-number pages (/numbers/etisalat-<digits>/ + the /numbers/ hub) were REMOVED
+// 2026-08-09 (owner directive). Rationale: the same mass-generated per-number page pattern drew a
+// penalty on the sister site goldennummbers, and on PPP the tree never earned a click (GSC 3 mo to
+// 2026-08-09: per-number pages ~2-3 impressions each, 0 clicks) while contributing 425 of the 640
+// "not indexed" URLs. 410 (not 404) is deliberate: it is the explicit "intentionally removed"
+// signal, so Google de-indexes faster and stops recrawling sooner than it would for a soft 404.
+// Keep this rule permanently — deleting it would let these URLs fall back to plain 404s.
+function isRemovedNumberPage(url) {
+  return url.pathname === "/numbers" || url.pathname.startsWith("/numbers/");
+}
+
 // Parent paths Google crawls that have no index page of their own → 301 to a real page so they
 // leave GSC "Not found (404)" and pass crawl equity. /ar/blog/ holds AR posts but has no hub index.
 function legacyPathRedirect(url) {
@@ -49,6 +60,17 @@ export default {
 
     const canonical = canonicalRedirect(request, url);
     if (canonical) return canonical;
+
+    if (isRemovedNumberPage(url)) {
+      return new Response("Gone", {
+        status: 410,
+        headers: {
+          "content-type": "text/plain; charset=utf-8",
+          "x-robots-tag": "noindex",
+          "cache-control": "public, max-age=86400",
+        },
+      });
+    }
 
     const legacy = legacyPathRedirect(url);
     if (legacy) return Response.redirect(legacy, 301);

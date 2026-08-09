@@ -10,10 +10,12 @@ Disallow: /api/
 Disallow: /gviz/
 Disallow: /export
 
-# Sitemaps (index covers the main sitemap + the per-number sitemap)
+# Sitemaps. sitemap-numbers.xml was removed 2026-08-09 with the /numbers/ tree.
+# NOTE: do NOT add "Disallow: /numbers/" here. Those URLs now return 410 Gone, and a
+# crawler that is blocked from fetching them can never see the 410 — they would sit in
+# the index indefinitely. Leave the path crawlable until GSC shows it drained.
 Sitemap: https://postpaidplans.com/sitemap-index.xml
 Sitemap: https://postpaidplans.com/sitemap.xml
-Sitemap: https://postpaidplans.com/sitemap-numbers.xml
 
 # AI Crawlers — welcome (GEO / AI search optimization)
 User-agent: GPTBot
