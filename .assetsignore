@@ -20,6 +20,14 @@ worker.js
 
 # build tooling (the per-number page generator) — never served
 *.py
+*.pyc
+__pycache__
+**/__pycache__
+
+# generator working dirs — no web assets live here, and runtime/sheets.json was
+# being served publicly until 2026-08-30 (found live at /runtime/sheets.json).
+runtime
+social
 
 # internal reference copy of the IndexNow key
 # (the real verification file 7ca1a2e6...txt IS served, on purpose)
