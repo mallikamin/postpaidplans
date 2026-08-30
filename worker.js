@@ -56,7 +56,9 @@ function legacyPathRedirect(url) {
 
 // ── MAINTENANCE MODE ───────────────────────────────────────────────────────
 // Paused 2026-08-17 on the owner's instruction while the brands are reworked.
-// TO BRING THE SITE BACK: set MAINTENANCE = false, then `npx wrangler deploy`
+// UNPAUSED 2026-08-30 on the owner's instruction — inventory is back on the
+// re-issued master sheet (1duUVd…), same day goldennummbers.com came back.
+// TO PAUSE AGAIN: set MAINTENANCE = true, then `npx wrangler deploy`
 // from a clean checkout of main (this repo has no deploy workflow — the live
 // site is published manually with wrangler).
 //
@@ -66,7 +68,7 @@ function legacyPathRedirect(url) {
 // here — that would de-index the very pages the 503 is protecting. Note this
 // gate runs BEFORE canonicalRedirect() and the /numbers/ 410 rule, so while
 // it is on, every path answers 503 (including the removed-number-page 410s).
-const MAINTENANCE = true;
+const MAINTENANCE = false;
 const MAINTENANCE_RETRY_AFTER = 86400; // seconds (24h)
 
 function maintenanceResponse() {
