@@ -109,7 +109,7 @@ def make_page(d):
         faqs=[
             (f"What is the cheapest Etisalat postpaid plan in {name}?", d["q_cheapest"]),
             (f"Do you deliver Etisalat SIMs the same day in {name}?",
-             f"Yes. As an Official e&amp; Partner and Authorized Etisalat Dealer we deliver across {name} — {d['areas']}. Pick your plan and a free VIP number, confirm on WhatsApp +971 56 902 8087 before the afternoon cut-off, and the SIM arrives the same day."),
+             f"Yes. As an Official e&amp; Partner and Authorized Etisalat Dealer we deliver across {name} — {d['areas']}. Pick your plan and a free VIP number, confirm on WhatsApp +971 58 990 7187 before the afternoon cut-off, and the SIM arrives the same day."),
             (f"Which Etisalat plan in {name} has unlimited data?",
              "The Freedom Unlimited Data 500 (AED 300/month, down from AED 600) gives unlimited high-speed data plus 1,000 flexi minutes and a free Silver number. The Gold Plan 500 and the Platinum Plan also include unlimited data with unlimited local and international calls."),
             (f"Can I get a free VIP number with an Etisalat plan in {name}?",

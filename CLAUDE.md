@@ -21,7 +21,7 @@
 - **Do not propose per-number / per-SKU mass page generation for this site again.** Number inventory is served by the interactive `/choose-number/` tool, which is the supported surface. If mass pages are ever reconsidered, it needs an explicit owner decision that overrides this line.
 
 ## Shared backend (reused, keep identical)
-- WhatsApp / phone number: **`971569028087`** (the 8087 line) for ALL links — WhatsApp *and* `tel:` voice. **The old 9377 voice line (`+971566999377`) was retired 2026-07-18 (Malik) and must not be reintroduced anywhere.** (Superseded the earlier "keep the tel: voice line as 9377" rule.)
+- WhatsApp / phone number: **`971589907187`** (the 8087 line) for ALL links — WhatsApp *and* `tel:` voice. **The old 9377 voice line (`+971566999377`) was retired 2026-07-18 (Malik) and must not be reintroduced anywhere.** (Superseded the earlier "keep the tel: voice line as 9377" rule.)
 - `/choose-number/` — the number picker is reused verbatim from uaepremiumnumbers; same Google Sheets inventory + `PARTNER_API` Apps Script. Only domain/canonical/branding were swapped. **Stays functionally the same.**
 - Google Sheets inventory (SHEETS array in choose-number) is shared across all three sites.
 

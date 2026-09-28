@@ -193,7 +193,7 @@ FAQ_POOL = lambda c: [
  (f"I make a lot of local UAE calls too — which plan?",
   f"Choose the Unlimited Calls 600 Flexi (AED 360/month): 50GB of data plus unlimited flexi minutes that cover both local UAE calls and international calls to {c['name']} from a single allowance."),
  (f"How do I get an Etisalat plan for calling {c['name']}?",
-  "Message a live Etisalat specialist on WhatsApp +971 56 902 8087 with how you call home. We confirm the right plan, add a free VIP number and deliver the SIM the same day across the UAE — as an Authorized Etisalat Dealer."),
+  "Message a live Etisalat specialist on WhatsApp +971 58 990 7187 with how you call home. We confirm the right plan, add a free VIP number and deliver the SIM the same day across the UAE — as an Authorized Etisalat Dealer."),
 ]
 
 
@@ -320,7 +320,7 @@ def build_hub():
             ("Is an unlimited calling plan cheaper than add-on packs?",
              "For regular callers, usually yes. Add-on packs give a fixed bundle that runs out; the Unlimited 1 Country plan is a flat AED 325/month with no per-minute charge and full network call quality."),
             ("How do I order an international calling plan?",
-             "Message a live Etisalat specialist on WhatsApp +971 56 902 8087 with the country you call most. We confirm the right plan, add a free VIP number and deliver the SIM the same day across the UAE."),
+             "Message a live Etisalat specialist on WhatsApp +971 58 990 7187 with the country you call most. We confirm the right plan, add a free VIP number and deliver the SIM the same day across the UAE."),
         ],
         cta_h2='Call home, <span class="gold-text">unlimited</span>',
         cta_p="Tell us the country you call most and we'll set up the right Etisalat plan with unlimited calls and a free VIP number — same-day delivery across the UAE.",

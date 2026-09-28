@@ -16,7 +16,7 @@ import os
 from urllib.parse import quote
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-WA = "971569028087"
+WA = "971589907187"
 
 # --- Canonical 11-plan catalogue (values match the live Dubai landing page) -----
 # (key, name, price, old_price, data, minutes, roaming, free_number, popular, schema_desc, note)
@@ -167,7 +167,7 @@ HEAD = '''<!DOCTYPE html>
     "alternateName": "Official e& Partner & Authorized Etisalat Dealer",
     "description": "@@LB_DESC@@",
     "url": "https://postpaidplans.com/@@SLUG@@/",
-    "telephone": "+971569028087",
+    "telephone": "+971589907187",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Al Zarooni Building, Office 1904, Ayal Nasir, Deira",
@@ -179,7 +179,7 @@ HEAD = '''<!DOCTYPE html>
     "priceRange": "AED 188 - AED 1,000",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+971569028087",
+      "telephone": "+971589907187",
       "contactType": "sales",
       "availableLanguage": ["English", "Arabic"]
     }
@@ -222,7 +222,7 @@ HEAD = '''<!DOCTYPE html>
   </script>
 </head>
 <body>
-  <header><div class="wrap nav"><a href="/" class="brand"><span class="dot"></span>Postpaid<b>Plans</b>&nbsp;UAE</a><nav class="nav-links"><a href="/#finder">Plan Finder</a><a href="/#compare">Compare Plans</a><a href="/premium-numbers-uae/">VIP Numbers</a><a href="/blog/">Blog</a><a href="/choose-number/">Choose Number</a><a href="/about/">About</a></nav><div class="nav-cta"><a href="https://wa.me/971569028087" target="_blank" rel="noopener noreferrer" class="btn btn-wa">WhatsApp</a></div><button class="burger" id="burger" aria-label="Open menu">&#9776;</button></div><div class="mobile-menu" id="mobileMenu"><a href="/#finder">Plan Finder</a><a href="/#compare">Compare Plans</a><a href="/premium-numbers-uae/">VIP Numbers</a><a href="/blog/">Blog</a><a href="/choose-number/">Choose Number</a><a href="/about/">About Us</a></div></header>
+  <header><div class="wrap nav"><a href="/" class="brand"><span class="dot"></span>Postpaid<b>Plans</b>&nbsp;UAE</a><nav class="nav-links"><a href="/#finder">Plan Finder</a><a href="/#compare">Compare Plans</a><a href="/premium-numbers-uae/">VIP Numbers</a><a href="/blog/">Blog</a><a href="/choose-number/">Choose Number</a><a href="/about/">About</a></nav><div class="nav-cta"><a href="https://wa.me/971589907187" target="_blank" rel="noopener noreferrer" class="btn btn-wa">WhatsApp</a></div><button class="burger" id="burger" aria-label="Open menu">&#9776;</button></div><div class="mobile-menu" id="mobileMenu"><a href="/#finder">Plan Finder</a><a href="/#compare">Compare Plans</a><a href="/premium-numbers-uae/">VIP Numbers</a><a href="/blog/">Blog</a><a href="/choose-number/">Choose Number</a><a href="/about/">About Us</a></div></header>
 
   <div class="wrap"><div class="crumb"><a href="/">Home</a> › <span>@@BREADCRUMB@@</span></div></div>
 
@@ -289,9 +289,9 @@ HEAD = '''<!DOCTYPE html>
 
   <section class="block bg-soft"><div class="wrap"><div class="cta-band"><h2>@@CTA_H2@@</h2><p>@@CTA_P@@</p><a href="@@CTA_WA@@" class="btn btn-wa btn-lg" target="_blank" rel="noopener noreferrer">Talk to a LIVE Etisalat Specialist now</a></div></div></section>
 
-  <footer><div class="wrap"><div class="foot-grid"><div><div class="foot-brand">Postpaid<b>Plans</b> UAE</div><p style="max-width:24rem">Official e&amp; Partner &amp; Authorized Etisalat Dealer helping UAE residents pick the right Etisalat postpaid plan and a premium VIP number, fast. Same-day SIM delivery in Dubai, Abu Dhabi &amp; Sharjah.</p><a href="https://wa.me/971569028087" target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="margin-top:1rem">Talk to a LIVE Etisalat Specialist</a><div style="display:inline-flex;align-items:center;gap:.45rem;margin-top:.9rem;font-size:.8rem;color:rgba(255,255,255,.72);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:.4rem .7rem">\U0001f512 SSL secured · Official e&amp; Partner</div><div style="font-size:.82rem;color:rgba(255,255,255,.62);margin-top:.85rem;line-height:1.55">&#128205; Al Zarooni Building, Office 1904, Ayal Nasir, Deira, Dubai, UAE<br><a href="https://www.google.com/maps?cid=11719519233119757422" target="_blank" rel="noopener noreferrer" style="color:var(--gold)">&#9733; 5.0 &mdash; Read our Google reviews &rarr;</a></div></div><div><h4>Plan guides</h4><a href="/best-etisalat-unlimited-data-plan/">Unlimited Data Plan</a><a href="/best-etisalat-plan-for-family/">Best Family Plan</a><a href="/etisalat-plans-under-200-aed/">Plans Under AED 200</a><a href="/cheapest-etisalat-postpaid-plan/">Cheapest Plan</a><a href="/etisalat-business-postpaid-plans/">Business Plans</a><a href="/etisalat-postpaid-plans-dubai/">Plans in Dubai</a></div><div><h4>VIP Numbers</h4><a href="/premium-numbers-uae/">Premium Numbers UAE</a><a href="/vip-numbers-dubai/">VIP Numbers Dubai</a><a href="/vip-numbers-abu-dhabi/">VIP Numbers Abu Dhabi</a><a href="/golden-numbers-sharjah/">Golden Numbers Sharjah</a><a href="/choose-number/">Choose Your Number</a></div><div><h4>Company</h4><a href="/about/">About Us</a><a href="/reviews/">Reviews</a><a href="/faq/">FAQ</a><a href="/privacy/">Privacy Policy</a><a href="/refund-policy/">Refund &amp; Contact</a><a href="/ar/">العربية</a></div></div><p class="disclaimer">© 2026 postpaidplans.com. Postpaid Plans UAE is an Official e&amp; Partner and Authorized Etisalat Dealer, operated independently; we are not Emirates Telecommunications Group Company (e&amp;) PJSC itself. "Etisalat" and "e&amp;" are trademarks of their respective owners. Prices are set by Etisalat and may change; final pricing confirmed at order.</p></div></footer>
+  <footer><div class="wrap"><div class="foot-grid"><div><div class="foot-brand">Postpaid<b>Plans</b> UAE</div><p style="max-width:24rem">Official e&amp; Partner &amp; Authorized Etisalat Dealer helping UAE residents pick the right Etisalat postpaid plan and a premium VIP number, fast. Same-day SIM delivery in Dubai, Abu Dhabi &amp; Sharjah.</p><a href="https://wa.me/971589907187" target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="margin-top:1rem">Talk to a LIVE Etisalat Specialist</a><div style="display:inline-flex;align-items:center;gap:.45rem;margin-top:.9rem;font-size:.8rem;color:rgba(255,255,255,.72);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:.4rem .7rem">\U0001f512 SSL secured · Official e&amp; Partner</div><div style="font-size:.82rem;color:rgba(255,255,255,.62);margin-top:.85rem;line-height:1.55">&#128205; Al Zarooni Building, Office 1904, Ayal Nasir, Deira, Dubai, UAE<br><a href="https://www.google.com/maps?cid=11719519233119757422" target="_blank" rel="noopener noreferrer" style="color:var(--gold)">&#9733; 5.0 &mdash; Read our Google reviews &rarr;</a></div></div><div><h4>Plan guides</h4><a href="/best-etisalat-unlimited-data-plan/">Unlimited Data Plan</a><a href="/best-etisalat-plan-for-family/">Best Family Plan</a><a href="/etisalat-plans-under-200-aed/">Plans Under AED 200</a><a href="/cheapest-etisalat-postpaid-plan/">Cheapest Plan</a><a href="/etisalat-business-postpaid-plans/">Business Plans</a><a href="/etisalat-postpaid-plans-dubai/">Plans in Dubai</a></div><div><h4>VIP Numbers</h4><a href="/premium-numbers-uae/">Premium Numbers UAE</a><a href="/vip-numbers-dubai/">VIP Numbers Dubai</a><a href="/vip-numbers-abu-dhabi/">VIP Numbers Abu Dhabi</a><a href="/golden-numbers-sharjah/">Golden Numbers Sharjah</a><a href="/choose-number/">Choose Your Number</a></div><div><h4>Company</h4><a href="/about/">About Us</a><a href="/reviews/">Reviews</a><a href="/faq/">FAQ</a><a href="/privacy/">Privacy Policy</a><a href="/refund-policy/">Refund &amp; Contact</a><a href="/ar/">العربية</a></div></div><p class="disclaimer">© 2026 postpaidplans.com. Postpaid Plans UAE is an Official e&amp; Partner and Authorized Etisalat Dealer, operated independently; we are not Emirates Telecommunications Group Company (e&amp;) PJSC itself. "Etisalat" and "e&amp;" are trademarks of their respective owners. Prices are set by Etisalat and may change; final pricing confirmed at order.</p></div></footer>
 
-  <a class="wa-fab" href="https://wa.me/971569028087" target="_blank" rel="noopener noreferrer" aria-label="Talk to a live Etisalat specialist on WhatsApp"><svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.13c-.24.68-1.42 1.31-1.95 1.36-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.37-.14-.2-1.18-1.57-1.18-2.99 0-1.42.74-2.12 1.01-2.41.26-.29.57-.36.76-.36l.55.01c.18.01.42-.07.65.5.24.57.81 1.99.88 2.13.07.14.12.31.02.5-.09.2-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.72 1.18 1.54 1.91 1.06.95 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.16-.2.69-.81.88-1.08.18-.28.37-.23.62-.14.25.09 1.6.76 1.87.9.28.14.46.2.53.32.07.11.07.66-.17 1.34z"/></svg></a>
+  <a class="wa-fab" href="https://wa.me/971589907187" target="_blank" rel="noopener noreferrer" aria-label="Talk to a live Etisalat specialist on WhatsApp"><svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.13c-.24.68-1.42 1.31-1.95 1.36-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.37-.14-.2-1.18-1.57-1.18-2.99 0-1.42.74-2.12 1.01-2.41.26-.29.57-.36.76-.36l.55.01c.18.01.42-.07.65.5.24.57.81 1.99.88 2.13.07.14.12.31.02.5-.09.2-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.72 1.18 1.54 1.91 1.06.95 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.16-.2.69-.81.88-1.08.18-.28.37-.23.62-.14.25.09 1.6.76 1.87.9.28.14.46.2.53.32.07.11.07.66-.17 1.34z"/></svg></a>
   <script>var b=document.getElementById('burger'), m=document.getElementById('mobileMenu');if(b)b.addEventListener('click', function(){m.style.display=m.style.display==='flex'?'none':'flex';});function track(a){try{if(typeof gtag==='function')gtag('event', a);}catch(e){}}
   // Fire a Lead event (GA4 + Meta Pixel) on any WhatsApp click, real conversion signal.
   document.addEventListener('click', function(e){var a=e.target.closest('a[href*="wa.me"]');if(!a)return;try{if(typeof gtag==='function')gtag('event','generate_lead',{method:'whatsapp'});}catch(x){}try{if(typeof fbq==='function')fbq('track','Lead',{content_name:'whatsapp_click'});}catch(x){}});
@@ -334,7 +334,7 @@ PAGES.append(dict(
         ("Which Etisalat plan is best for a family of four?",
          "For a typical family of four, put the Gold Plan 500 or Freedom Unlimited Data 500 on the heaviest user, an Unlimited Local Calls or Unlimited Calls 600 Flexi line on the biggest caller, and Freedom Plan 250 lines on the two lightest users. Use the free Plan Finder on postpaidplans.com to match plans to each person's usage."),
         ("Can I get several Etisalat SIMs on one family account?",
-         "Yes. We can set up multiple Etisalat postpaid lines for one household, each on the tier that fits that person, and deliver every SIM the same day with a free VIP number. Message us on WhatsApp +971 56 902 8087 and we will build the family setup for you."),
+         "Yes. We can set up multiple Etisalat postpaid lines for one household, each on the tier that fits that person, and deliver every SIM the same day with a free VIP number. Message us on WhatsApp +971 58 990 7187 and we will build the family setup for you."),
         ("Which family plan is best for calling relatives abroad?",
          "The Unlimited 1 Country 325 gives unlimited calls to one country (ideal if family is all in, say, India or Pakistan). If relatives are spread across several countries, the Unlimited Calls 600 Flexi at AED 360/month gives unlimited flexi minutes that work both locally and internationally."),
         ("Is each family line billed separately or on one account?",
@@ -483,13 +483,13 @@ PAGES.append(dict(
         ("What is the best Etisalat plan for a small business?",
          "For most SMBs the Unlimited Calls 600 Flexi at AED 360/month is the best all-rounder,50GB data and unlimited flexi minutes that work both locally and internationally, which suits owners who call overseas suppliers. Lighter back-office lines can sit on the Freedom Plan 250 at AED 188 to keep costs down."),
         ("Can I set up multiple Etisalat business lines on one account?",
-         "Yes. We can arrange several Etisalat postpaid lines for one company, each on the tier that fits the role, with a free VIP number on customer-facing lines, and deliver every SIM the same day. Message us on WhatsApp +971 56 902 8087 with how many lines you need."),
+         "Yes. We can arrange several Etisalat postpaid lines for one company, each on the tier that fits the role, with a free VIP number on customer-facing lines, and deliver every SIM the same day. Message us on WhatsApp +971 58 990 7187 with how many lines you need."),
         ("Which Etisalat plan is best for calling international suppliers?",
          "If you call one country constantly, the Unlimited 1 Country 325 gives unlimited calls to that country. If suppliers are spread across several countries, the Unlimited Calls 600 Flexi (AED 360) gives unlimited flexi minutes that work internationally as well as locally."),
         ("Do business plans come with a VIP number?",
          "Yes, eligible plans include a free VIP number (Silver, Gold or Platinum depending on tier), which is useful for customer-facing business lines. Browse the live inventory at postpaidplans.com/choose-number and we will deliver the SIMs the same day."),
         ("Can I register Etisalat business lines under a trade licence?",
-         "Yes. Etisalat supports business registrations with trade-licence documentation. Tell us your company details on WhatsApp +971 56 902 8087 and we will handle the business paperwork alongside same-day SIM delivery."),
+         "Yes. Etisalat supports business registrations with trade-licence documentation. Tell us your company details on WhatsApp +971 58 990 7187 and we will handle the business paperwork alongside same-day SIM delivery."),
         ("Is there a contract on Etisalat business plans?",
          "Etisalat postpaid plans carry a commitment of 12 to 24 months, depending on the plan and the VIP number you choose, which underpins the pricing and any bundled VIP number. We confirm the exact term for each line before your company orders."),
         ("Are business plan prices inclusive of VAT?",
@@ -637,7 +637,7 @@ PAGES.append(dict(
         ("Is there a fee to cancel an Etisalat plan early?",
          "A plan still inside its minimum commitment period may carry an early-termination charge, which is what unlocks the discounted pricing and any free VIP number. Etisalat sets these terms, so confirm your exact figure with them, and consider downgrading or porting instead, which often costs less."),
         ("Can I downgrade my Etisalat plan instead of cancelling?",
-         "Often yes, and it is usually cheaper. Moving to a lighter Freedom plan keeps your number and avoids an exit charge while cutting your monthly cost. Message us on WhatsApp +971 56 902 8087 with your current plan and we will tell you what is possible."),
+         "Often yes, and it is usually cheaper. Moving to a lighter Freedom plan keeps your number and avoids an exit charge while cutting your monthly cost. Message us on WhatsApp +971 58 990 7187 with your current plan and we will tell you what is possible."),
         ("Can I keep my number if I cancel and switch?",
          "Yes. UAE number portability lets you carry your existing mobile number onto a new plan, including from du, instead of losing it. Your line keeps working until the switch completes, so you never go dark."),
         ("What do I need to cancel an Etisalat line?",

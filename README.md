@@ -54,7 +54,7 @@ Commit + push and they go live on the next deploy.
 - [ ] (Optional) New branded `og-image.png` — currently reuses the sister-site image.
 
 ## 🔁 Shared backend (do not diverge)
-- WhatsApp: **`971569028087`** (all WA links). `tel:` voice line: `+971566999377`.
+- WhatsApp: **`971589907187`** (all WA links). `tel:` voice line: `+971566999377`.
 - `/choose-number/` is reused verbatim from `uae-premium-numbers` — same Google Sheets inventory + `PARTNER_API` Apps Script. Keep it functionally identical.
 
 ## ⚠️ Positioning rule

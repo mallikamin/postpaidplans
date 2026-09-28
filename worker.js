@@ -10,7 +10,7 @@
  *   everything else   -> static assets from ./ (env.ASSETS)
  */
 
-const WA_NUMBER = "971569028087";
+const WA_NUMBER = "971589907187";
 const DEFAULT_PREFILL = "Hi, I want help choosing an Etisalat postpaid plan from postpaidplans.com.";
 const CANONICAL_HOST = "postpaidplans.com";
 
