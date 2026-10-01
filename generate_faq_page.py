@@ -103,7 +103,7 @@ CATEGORIES = [
      ]),
 
     ("porting-esim", "Porting &amp; eSIM",
-     "Bring your number across (including from du) and go physical or eSIM.",
+     "Bring your number across (including from du) and go physical or eSIM. Full walkthrough: <a href=\"/blog/etisalat-esim-uae-activation-guide-2026/\">Etisalat eSIM activation guide</a>.",
      [
         ("Can I keep my current number and move it to Etisalat?",
          "Yes. UAE number portability lets you bring your existing mobile number onto an Etisalat postpaid plan. Your line keeps working until the switch completes."),
@@ -112,9 +112,9 @@ CATEGORIES = [
         ("Does porting cost anything?",
          "There is no fee from us for assisting your port. You simply take up your new Etisalat postpaid plan."),
         ("Do Etisalat postpaid plans support eSIM?",
-         "Yes. Etisalat supports <strong>eSIM</strong> on compatible devices. Tell us at order and we will set up an eSIM instead of a physical SIM where your phone supports it."),
+         "Yes. Etisalat supports <strong>eSIM</strong> on compatible devices. Tell us at order and we will set up an eSIM instead of a physical SIM where your phone supports it. See the <a href=\"/blog/etisalat-esim-uae-activation-guide-2026/\">full eSIM guide</a> for compatible devices."),
         ("Can I switch my physical SIM to eSIM later?",
-         "Yes. SIM-to-eSIM conversion is available through Etisalat channels once your line is active."),
+         "Yes. SIM-to-eSIM conversion is available through Etisalat channels once your line is active. Our <a href=\"/blog/etisalat-esim-uae-activation-guide-2026/\">eSIM activation guide</a> shows the step-by-step in the e&amp; UAE app."),
      ]),
 
     ("billing-contract", "Billing, contract &amp; promo",

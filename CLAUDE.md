@@ -26,7 +26,17 @@
 - Google Sheets inventory (SHEETS array in choose-number) is shared across all three sites.
 
 ## Tracking
-- GA4 + Meta Pixel are **placeholders** (`__GA4_PLACEHOLDER__`, `__FB_PIXEL_PLACEHOLDER__`, `__GSC_PLACEHOLDER__`). Paste the postpaidplans.com property IDs before/after first deploy.
+- GA4 `G-B4813N8J6J` + Meta Pixel `3266474320203798` (PPP dedicated) are live on every page. No `*_PLACEHOLDER__` may ship (the last 4 pages were fixed 2026-10-01).
+
+## Generated pages (rule since 2026-10-01)
+- Plan, location, FAQ and calling pages are OUTPUT of `generate_plan_pages.py`, `generate_location_pages.py`,
+  `generate_faq_page.py`, `generate_calling_pages.py`. Change the generator, regenerate, commit both. Never hand-edit
+  only the HTML: on 2026-10-01 the generators and 52 live pages had drifted apart (hand edits on one side, unrun
+  template updates on the other), so rerunning any of them would silently rewrite live copy.
+- `python check_generator_drift.py` must exit 0 before you commit a generator or generated-page change.
+- `/choose-number/` is maintained directly in this repo. The old GN→PPP `sync_choose_number.py` is archived
+  (`_archive/2026-10-01_sync_choose_number.py`): GN's page has diverged and running it would put 8087, GN's title
+  and GN-only nav onto PPP.
 
 ## Deploy
 - Cloudflare "Workers with Static Assets" via `wrangler.toml` + `worker.js`, connected to GitHub repo `mallikamin/postpaidplans`. Domain DNS: GoDaddy → Cloudflare nameservers. `git push origin main` → auto-deploy.
