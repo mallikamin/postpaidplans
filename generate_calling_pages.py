@@ -289,6 +289,8 @@ def build_hub():
     for title, slugs in groups:
         links = "".join(f'<a href="/best-etisalat-plan-calling-{s}/">{bymap[s]["name"]}</a>' for s in slugs if s in bymap)
         chips += f'<h3>{title}</h3><div class="link-chips">{links}</div>'
+    city_links = "".join(f'<a href="/{cd["slug"]}/">Dubai to {cd["city"]}</a>' for cd in CITIES)
+    chips += f'<h3>Popular city routes</h3><div class="link-chips">{city_links}</div>'
     return dict(
         slug="international-calling-plans", ctx="",
         title="International Calling Plans from the UAE 2026 | Etisalat Unlimited",
